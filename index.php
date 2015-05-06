@@ -1,6 +1,6 @@
 <?php
 
-$debug = 1;
+$debug = true;
 if ($debug) {
 	ini_set('display_errors', 1);
 	ini_set('error_prepend_string', '<div class="error">');
@@ -8,10 +8,24 @@ if ($debug) {
 	error_reporting(~0);
 }
 
-require('model/movie.php');
+// Configure class autoloading based on the class namespace
+spl_autoload_register(function($class) {
+    include_once(str_replace('\\', '/', strtolower($class)) . ".php");
+});
 
-use Silverado\model\Movie as Movie;
+use silverado\models\Movie;
+use silverado\models\Screening;
 
-$movie = Movie::getById(2);
+$screening = Screening::getById(1);
 
-print_r($movie);
+print_r($screening);
+
+$screening->movie;
+
+print_r($screening);
+
+$screening->price;
+
+print_r($screening);
+
+

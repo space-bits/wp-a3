@@ -1,6 +1,5 @@
 <?php
-namespace Silverado\model;
-
+namespace silverado\models;
 
 abstract class Model {
 	/**
@@ -23,10 +22,19 @@ abstract class Model {
 	 * Return the attribute $name or null if it doesn't exist
 	 */
 	public function __get($name) {
-		if (property_exists($this, $name))
+		if (property_exists($this, $name)) {
+			if (property_exists($this, $name . 'Id') && !$this->$name) {
+				$this->lazyLoad($name);
+			}
 			return $this->$name;
+		}
 
 		return null;
+	}
+
+	protected function lazyLoad($name) {
+		$class = (new \ReflectionClass($this))->getNamespaceName() . '\\' . ucfirst($name);
+		$this->$name = $class::getById($this->{$name . 'Id'});
 	}
 
 	/**
@@ -45,11 +53,15 @@ abstract class Model {
 		}
 	}
 
+	public function __construct($nameValue = []) {
+		$this->setByNameValue($nameValue);
+	}
+
 	/**
-	 * Try to match all Column $name and $values present in a $row with internal attributes
+	 * Try to match all Column $name and $values present in a $nameValue with internal attributes
 	 */
-	protected function setByResultRow($row) {
-		foreach ($row as $name => $value) {
+	protected function setByNameValue($nameValue) {
+		foreach ($nameValue as $name => $value) {
 			$this->__set($name, $value);
 		}
 	}
@@ -67,8 +79,7 @@ abstract class Model {
 
 		foreach ($db->query('SELECT * FROM ' . $table) as $row) {
 			$cl = new $class();
-			$object = new $class;
-			$object->setByResultRow($row);
+			$object = new $class($row);
 			$objects[] = $object;
 		}
 		return $objects;
@@ -87,12 +98,12 @@ abstract class Model {
 
 		if ($stmt->execute(array($id))) {
 			$row = $stmt->fetch();
-			$object = new Movie();
-			$object->setByResultRow($row);
+			$object = new $class($row);
 
 			return $object;
 		}
 		return null;
 	}
+
 
 }
