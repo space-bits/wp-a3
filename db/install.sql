@@ -1,33 +1,36 @@
 CREATE TABLE movie (
-	id int primary key,
-	name varchar(100),
-	ageGuidanceRating varchar(10),
-	duration int,
-	genre varchar(100),
-	film char(2),
-	imgPath varchar(100),
-	description varchar(200),
-	storyline text
+	id INTEGER primary key AUTOINCREMENT,
+	name VARCHAR(100),
+	ageGuidanceRating VARCHAR(10),
+	duration INTEGER,
+	genre VARCHAR(100),
+	film CHAR(2),
+	imgPath VARCHAR(100),
+	description VARCHAR(200),
+	storyline TEXT,
+	active INTEGER NOT NULL DEFAULT 1
 );
 
 CREATE TABLE screening (
-	id INT PRIMARY KEY,
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	day VARCHAR(10),
 	time VARCHAR(5),
-	movieId INT,
-	priceId INT
+	movieId INTEGER,
+	priceId INTEGER,
+	active INTEGER NOT NULL DEFAULT 1
 );
 
 CREATE TABLE price (
-	id INT PRIMARY KEY,
-	description varchar(100),
-	sa INT,
-	sp INT,
-	sc INT,
-	fa INT,
-	fc INT,
-	b1 INT,
-	b2 INT,
-	b3 INT
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	description VARCHAR(100),
+	sa INTEGER,
+	sp INTEGER,
+	sc INTEGER,
+	fa INTEGER,
+	fc INTEGER,
+	b1 INTEGER,
+	b2 INTEGER,
+	b3 INTEGER,
+	active INTEGER NOT NULL DEFAULT 1
 );
 

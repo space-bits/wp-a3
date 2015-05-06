@@ -2,6 +2,10 @@
 namespace silverado\models;
 
 abstract class Model {
+
+	protected $id;
+	protected  $active;
+
 	/**
 	 * Singleton: http://www.phptherightway.com/pages/Design-Patterns.html#singleton
 	 */
@@ -44,7 +48,7 @@ abstract class Model {
 	 * attribute $name
 	 */
 	public function __set($name, $value) {
-		if (property_exists($this, $name)) {
+		if (property_exists($this, $name) && $name != 'id') {
 			$validateMethod = 'validate' . ucfirst($name);
 			if (!method_exists($this, $validateMethod) ||
 				 method_exists($this, $validateMethod) && $this->$validateMethod($value)) {
@@ -105,5 +109,42 @@ abstract class Model {
 		return null;
 	}
 
+	private function getTableColumns($table) {
+		$db = Model::getDb();
+
+		$result = $db->query("PRAGMA table_info(" . $table . ")");
+		$result->setFetchMode(\PDO::FETCH_ASSOC);
+		$columns = array();
+		foreach ($result as $row) {
+			$columns[] = $row;
+		}
+		return $columns;
+	}
+
+	public function save() {
+		$db = Model::getDb();
+
+		$class = get_called_class();
+		$table = strtolower((new \ReflectionClass($class))->getShortName());
+
+		$columns = $this->getTableColumns($table);
+
+		$fields = [];
+		$placeHolders = [];
+		$values = [];
+		foreach ($columns as $column) {
+			$fields[$column['name']] = $column['name'];
+			$placeHolders[$column['name']] = ':' . $column['name'];
+			$values[$column['name']] = $this->$column['name'];
+		}
+		$query = 'INSERT OR REPLACE INTO ' . $table . '(' . implode(', ', $fields) . ') VALUES ('. implode(', ', $placeHolders) . ')';
+		$stmt = $db->prepare($query);
+		foreach ($fields as $field) {
+			$stmt->bindParam($placeHolders[$field], $values[$field]);
+		}
+		$res = $stmt->execute();
+		$this->id = $db->lastInsertId();
+		return $this->id;
+	}
 
 }

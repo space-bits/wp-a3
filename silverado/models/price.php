@@ -3,7 +3,6 @@ namespace silverado\models;
 
 class Price extends Model {
 
-	protected $id;
 	protected $description;
 	protected $sa;
 	protected $sp;

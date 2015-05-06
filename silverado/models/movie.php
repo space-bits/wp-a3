@@ -3,7 +3,6 @@ namespace silverado\models;
 
 class Movie extends Model {
 
-	protected $id;
 	protected $name;
 	protected $ageGuidanceRating;
 	protected $duration;

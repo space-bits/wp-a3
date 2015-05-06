@@ -16,16 +16,22 @@ spl_autoload_register(function($class) {
 use silverado\models\Movie;
 use silverado\models\Screening;
 
-$screening = Screening::getById(1);
+$screening = new Screening();
+
+$screening->day = 'day';
+$screening->time = 'time';
+$screening->movieId = 200;
+$screening->priceId = 100;
+
+$screening->save();
 
 print_r($screening);
 
-$screening->movie;
+$screening->day = 'day2';
+$screening->time = 'time2';
+$screening->movieId = 300;
+$screening->priceId = 200;
+
+$screening->save();
 
 print_r($screening);
-
-$screening->price;
-
-print_r($screening);
-
-
