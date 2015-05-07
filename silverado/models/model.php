@@ -4,7 +4,7 @@ namespace silverado\models;
 abstract class Model {
 
 	protected $id;
-	protected  $active;
+	protected $active;
 
 	/**
 	 * Singleton: http://www.phptherightway.com/pages/Design-Patterns.html#singleton
@@ -48,23 +48,20 @@ abstract class Model {
 	 * attribute $name
 	 */
 	public function __set($name, $value) {
-		if (property_exists($this, $name) && $name != 'id') {
+		// Don't allow to set IDs because they are generated automatically by the database.
+		if (property_exists($this, $name) && $name != 'id') { 
 			$validateMethod = 'validate' . ucfirst($name);
 			if (!method_exists($this, $validateMethod) ||
 				 method_exists($this, $validateMethod) && $this->$validateMethod($value)) {
+				if (property_exists($this, $name . 'Id') && property_exists($value, 'id')) {
+					$this->{$name . 'Id'} = $value->id;
+				}
 				$this->$name = $value;
 			}
 		}
 	}
 
 	public function __construct($nameValue = []) {
-		$this->setByNameValue($nameValue);
-	}
-
-	/**
-	 * Try to match all Column $name and $values present in a $nameValue with internal attributes
-	 */
-	protected function setByNameValue($nameValue) {
 		foreach ($nameValue as $name => $value) {
 			$this->__set($name, $value);
 		}
@@ -147,4 +144,15 @@ abstract class Model {
 		return $this->id;
 	}
 
+	public function delete() {
+		$db = Model::getDb();
+
+		$class = get_called_class();
+		$table = strtolower((new \ReflectionClass($class))->getShortName());
+
+		$stmt = $db->prepare('UPDATE ' . $table . ' SET active=0 WHERE id=?');
+
+		$stmt->execute(array($this->id));
+		
+	}
 }
