@@ -1,7 +1,7 @@
 <?php
-namespace silverado\models;
+namespace Silverado\Models;
 
-abstract class Model {
+abstract class AbstractModel {
 
 	protected $id;
 	protected $active;
@@ -37,7 +37,7 @@ abstract class Model {
 	}
 
 	protected function lazyLoad($name) {
-		$class = (new \ReflectionClass($this))->getNamespaceName() . '\\' . ucfirst($name);
+		$class = (new \ReflectionClass($this))->getNamespaceName() . '\\' . ucfirst($name) . 'Model';
 		$this->$name = $class::getById($this->{$name . 'Id'});
 	}
 
@@ -71,17 +71,14 @@ abstract class Model {
 	 * Get all instances of the calling Class
 	 */
 	public static function getAll() {
-		$db = Model::getDb();
+		$db = AbstractModel::getDb();
 
 		$class = get_called_class();
-		$table = strtolower((new \ReflectionClass($class))->getShortName());
+		$table = self::getTableName($class);
 
 		$objects = [];
-
 		foreach ($db->query('SELECT * FROM ' . $table) as $row) {
-			$cl = new $class();
-			$object = new $class($row);
-			$objects[] = $object;
+			$objects[] = new $class($row);
 		}
 		return $objects;
 	}
@@ -90,28 +87,27 @@ abstract class Model {
 	 * Get a instance of the calling Class with the given $id
 	 */
 	public static function getById($id) {
-		$db = Model::getDb();
+		$db = AbstractModel::getDb();
 
 		$class = get_called_class();
-		$table = strtolower((new \ReflectionClass($class))->getShortName());
+		$table = self::getTableName($class);
 
 		$stmt = $db->prepare('SELECT * FROM ' . $table . ' WHERE id=?');
-
 		if ($stmt->execute(array($id))) {
-			$row = $stmt->fetch();
-			$object = new $class($row);
-
-			return $object;
+			return new $class($stmt->fetch());
 		}
 		return null;
 	}
 
-	private function getTableColumns($table) {
-		$db = Model::getDb();
+	private function getTableColumns() {
+		$db = AbstractModel::getDb();
+
+		$class = get_called_class();
+		$table = $this->getTableName($class);
 
 		$result = $db->query("PRAGMA table_info(" . $table . ")");
 		$result->setFetchMode(\PDO::FETCH_ASSOC);
-		$columns = array();
+		$columns = [];
 		foreach ($result as $row) {
 			$columns[] = $row;
 		}
@@ -119,12 +115,11 @@ abstract class Model {
 	}
 
 	public function save() {
-		$db = Model::getDb();
+		$db = AbstractModel::getDb();
 
 		$class = get_called_class();
-		$table = strtolower((new \ReflectionClass($class))->getShortName());
-
-		$columns = $this->getTableColumns($table);
+		$table = $this->getTableName($class);
+		$columns = $this->getTableColumns();
 
 		$fields = [];
 		$placeHolders = [];
@@ -145,14 +140,12 @@ abstract class Model {
 	}
 
 	public function delete() {
-		$db = Model::getDb();
-
-		$class = get_called_class();
-		$table = strtolower((new \ReflectionClass($class))->getShortName());
-
-		$stmt = $db->prepare('UPDATE ' . $table . ' SET active=0 WHERE id=?');
-
+		$db = AbstractModel::getDb();
+		$stmt = $db->prepare('UPDATE ' . $this->getTableName($class) . ' SET active=0 WHERE id=?');
 		$stmt->execute(array($this->id));
-		
+	}
+
+	protected static function getTableName($class) {
+		return strtolower(preg_replace("/^.*\\\\(.*)Model$/", '$1', $class));
 	}
 }

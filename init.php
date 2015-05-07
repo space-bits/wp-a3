@@ -10,6 +10,15 @@ if ($debug) {
 }
 
 // Configure class autoloading based on the class namespace
-spl_autoload_register(function($class) {
-    include_once(str_replace('\\', '/', strtolower($class)) . ".php");
+spl_autoload_register(function($className) {
+	$class = preg_replace("/^(.*)(Model|Controller|View)$/", "Silverado\\$2s\\$0", $className);
+	$file = str_replace('\\', DIRECTORY_SEPARATOR, $className) . ".php";
+    require_once($file);
+    //use $class;
 });
+
+function getValidatedUri() {
+	$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+	$uri = preg_replace("/^(.index.php)?\/(.*)$/", "$2", $uri);
+	return $uri;
+}

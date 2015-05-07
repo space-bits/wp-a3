@@ -1,7 +1,7 @@
 <?php
-namespace silverado\models;
+namespace Silverado\Models;
 
-class Screening extends Model {
+class ScreeningModel extends AbstractModel {
 
 	protected $day;
 	protected $time;

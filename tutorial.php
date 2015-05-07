@@ -11,13 +11,13 @@ require_once('init.php');
 // we have an autoloader set, so as long as your
 // namespaces meet the actual path in your filesystem
 // the autoloader will handle it properly.
-use silverado\models\Movie;
-use silverado\models\Screening;
-use silverado\models\Price;
+use Silverado\Models\MovieModel;
+use Silverado\Models\ScreeningModel;
+use Silverado\Models\PriceModel;
 
 echo '<pre>';
 echo 'Creating a new Movie: ';
-$movie = new Movie();
+$movie = new MovieModel();
 
 echo 'Set it\'s attributes manually: ';
 $movie->name = 'The Godfather';
@@ -55,12 +55,12 @@ $priceAttrs = [
 	'b2' => 15,
 	'b3' => 15
 ];
-$price = new Price($priceAttrs);
+$price = new PriceModel($priceAttrs);
 $price->save();
 print_r($price);
 
 echo 'Ok, now let\'s create some associations: ';
-$screening = new Screening();
+$screening = new ScreeningModel();
 $screening->day = 'Wednesday';
 $screening->time = '18:30';
 print_r($screening);
@@ -71,11 +71,11 @@ $screening->price = $price;
 print_r($screening);
 
 echo 'To get a list of all prices: ';
-$prices = Price::getAll();
+$prices = PriceModel::getAll();
 print_r($prices);
 
 echo 'To get a specific screening id: ';
-$screening2 = Screening::getById(1);
+$screening2 = ScreeningModel::getById(1);
 print_r($screening2);
 
 echo 'Note that as we\'re using lazy-loading attributes, the $movie and the $price are not populated yet: ';

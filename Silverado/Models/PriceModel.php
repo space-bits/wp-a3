@@ -1,7 +1,7 @@
 <?php
-namespace silverado\models;
+namespace Silverado\Models;
 
-class Price extends Model {
+class PriceModel extends AbstractModel {
 
 	protected $description;
 	protected $sa;

@@ -1,7 +1,7 @@
 <?php
-namespace silverado\models;
+namespace Silverado\Models;
 
-class Movie extends Model {
+class MovieModel extends AbstractModel {
 
 	protected $name;
 	protected $ageGuidanceRating;
