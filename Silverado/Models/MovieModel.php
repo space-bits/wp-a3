@@ -12,4 +12,6 @@ class MovieModel extends AbstractModel {
 	protected $description;
 	protected $storyline;
 
+	protected $screenings;
+
 }

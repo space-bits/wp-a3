@@ -6,6 +6,68 @@ abstract class AbstractModel {
 	protected $id;
 	protected $active;
 
+
+	public function __construct($nameValue = []) {
+		foreach ($nameValue as $name => $value) {
+			$this->__set($name, $value);
+		}
+	}
+
+	/**
+	 * Return the attribute $name or null if it doesn't exist
+	 */
+	public function __get($name) {
+		if (property_exists($this, $name)) {
+			if (property_exists($this, $name . 'Id') && !$this->$name) {
+				$this->lazyLoad($name);
+			}
+			if (substr($name, -1) == 's') {
+				$columns = $this->getTableColumns();
+				if (!in_array($name, $columns)) {
+					$class = $this->getModelClass(rtrim($name, 's'));
+					if (class_exists($class)) {
+						$this->$name = $class::getAllByForeignId(
+							$this->getTableName(get_class($this)),
+							$this->id
+						);
+					}
+				}
+			}
+			return $this->$name;
+		}
+
+		return null;
+	}
+
+	protected function getModelClass($name) {
+		return (new \ReflectionClass($this))->getNamespaceName() . '\\' . ucfirst($name) . 'Model';
+	}
+
+	protected function lazyLoad($name) {
+		$class = $this->getModelClass($name);
+		$this->$name = $class::getById($this->{$name . 'Id'});
+	}
+
+	/**
+	 * Verify if the attribute $name exists. If so, then verifies for a proper validator
+	 * to run against the supplied $value. If no validator is found then it's assumed that
+	 * there's no need to validate the supplied $value and therefore it is assigned to the
+	 * attribute $name
+	 */
+	public function __set($name, $value) {
+		// Don't allow to set IDs because they are generated automatically by the database.
+		if (property_exists($this, $name)) { 
+			$validateMethod = 'validate' . ucfirst($name);
+			if (!method_exists($this, $validateMethod) ||
+				 method_exists($this, $validateMethod) && $this->$validateMethod($value)) {
+				if (property_exists($this, $name . 'Id') && property_exists($value, 'id')) {
+					$this->{$name . 'Id'} = $value->id;
+				}
+				$this->$name = $value;
+			}
+		}
+	}
+
 	/**
 	 * Singleton: http://www.phptherightway.com/pages/Design-Patterns.html#singleton
 	 */
@@ -22,49 +84,23 @@ abstract class AbstractModel {
 		return $db;
 	}
 
-	/**
-	 * Return the attribute $name or null if it doesn't exist
-	 */
-	public function __get($name) {
-		if (property_exists($this, $name)) {
-			if (property_exists($this, $name . 'Id') && !$this->$name) {
-				$this->lazyLoad($name);
-			}
-			return $this->$name;
-		}
-
-		return null;
+	protected static function getTableName($class) {
+		return strtolower(preg_replace("/^.*\\\\(.*)Model$/", '$1', $class));
 	}
 
-	protected function lazyLoad($name) {
-		$class = (new \ReflectionClass($this))->getNamespaceName() . '\\' . ucfirst($name) . 'Model';
-		$this->$name = $class::getById($this->{$name . 'Id'});
-	}
+	protected function getTableColumns() {
+		$db = AbstractModel::getDb();
 
-	/**
-	 * Verify if the attribute $name exists. If so, then verifies for a proper validator
-	 * to run against the supplied $value. If no validator is found then it's assumed that
-	 * there's no need to validate the supplied $value and therefore it is assigned to the
-	 * attribute $name
-	 */
-	public function __set($name, $value) {
-		// Don't allow to set IDs because they are generated automatically by the database.
-		if (property_exists($this, $name) && $name != 'id') { 
-			$validateMethod = 'validate' . ucfirst($name);
-			if (!method_exists($this, $validateMethod) ||
-				 method_exists($this, $validateMethod) && $this->$validateMethod($value)) {
-				if (property_exists($this, $name . 'Id') && property_exists($value, 'id')) {
-					$this->{$name . 'Id'} = $value->id;
-				}
-				$this->$name = $value;
-			}
-		}
-	}
+		$class = get_called_class();
+		$table = $this->getTableName($class);
 
-	public function __construct($nameValue = []) {
-		foreach ($nameValue as $name => $value) {
-			$this->__set($name, $value);
+		$result = $db->query("PRAGMA table_info(" . $table . ")");
+		$result->setFetchMode(\PDO::FETCH_ASSOC);
+		$columns = [];
+		foreach ($result as $row) {
+			$columns[] = $row;
 		}
+		return $columns;
 	}
 
 	/**
@@ -84,6 +120,23 @@ abstract class AbstractModel {
 	}
 
 	/**
+	 * Get all instances of the calling Class
+	 */
+	public static function getAllByForeignId($foreignTable, $foreignId) {
+		$db = AbstractModel::getDb();
+
+		$class = get_called_class();
+		$table = self::getTableName($class);
+
+		$objects = [];
+		$query = 'SELECT * FROM ' . $table . ' WHERE ' . $foreignTable . 'Id=' . $foreignId;
+		foreach ($db->query($query) as $row) {
+			$objects[] = new $class($row);
+		}
+		return $objects;
+	}
+
+	/**
 	 * Get a instance of the calling Class with the given $id
 	 */
 	public static function getById($id) {
@@ -97,21 +150,6 @@ abstract class AbstractModel {
 			return new $class($stmt->fetch());
 		}
 		return null;
-	}
-
-	private function getTableColumns() {
-		$db = AbstractModel::getDb();
-
-		$class = get_called_class();
-		$table = $this->getTableName($class);
-
-		$result = $db->query("PRAGMA table_info(" . $table . ")");
-		$result->setFetchMode(\PDO::FETCH_ASSOC);
-		$columns = [];
-		foreach ($result as $row) {
-			$columns[] = $row;
-		}
-		return $columns;
 	}
 
 	public function save() {
@@ -145,7 +183,4 @@ abstract class AbstractModel {
 		$stmt->execute(array($this->id));
 	}
 
-	protected static function getTableName($class) {
-		return strtolower(preg_replace("/^.*\\\\(.*)Model$/", '$1', $class));
-	}
 }

@@ -13,8 +13,9 @@ if ($debug) {
 spl_autoload_register(function($className) {
 	$class = preg_replace("/^(.*)(Model|Controller|View)$/", "Silverado\\$2s\\$0", $className);
 	$file = str_replace('\\', DIRECTORY_SEPARATOR, $className) . ".php";
-    require_once($file);
-    //use $class;
+	if (file_exists($file)) {
+    	require_once($file);
+	}
 });
 
 function getValidatedUri() {
@@ -22,3 +23,5 @@ function getValidatedUri() {
 	$uri = preg_replace("/^(.index.php)?\/(.*)$/", "$2", $uri);
 	return $uri;
 }
+
+define('SILVERADO_DIR', dirname(__FILE__));
