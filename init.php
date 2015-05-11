@@ -20,7 +20,7 @@ spl_autoload_register(function($className) {
 
 function getValidatedUri() {
 	$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-	$uri = preg_replace("/^(.index.php)?\/(.*)$/", "$2", $uri);
+	$uri = preg_replace("/^(.index.php)?\/(.*)$/", "/$2", $uri);
 	return $uri;
 }
 

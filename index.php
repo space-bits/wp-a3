@@ -1,11 +1,15 @@
 <?php
 require_once('init.php');
+require_once('Config/Routes.php');
 
 use Silverado\Controllers\FrontController;
+use Silverado\Utils\Logger;
 
-try {
-	$uri = getValidatedUri();
-	new FrontController($uri);
-} catch(\Exception $e) {
+$uri = getValidatedUri();
+$route = $router->getRouteByUri($uri);
+
+if ($route) {
+	$route->callController($uri);
+} else {
 	echo '404';
 }

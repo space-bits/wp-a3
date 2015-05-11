@@ -107,7 +107,7 @@
 		<?php } /* end else */ ?>
 	</main>
 
-	<script src="js/booking.js"></script>
+	<script src="/static/js/booking.js"></script>
 
 <?php
 	// Footer: Do not remove.
