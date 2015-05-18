@@ -15,7 +15,7 @@
 			<span id="year">2015</span>
 		</div>
 	</div>
-	
+
 	<!-- ########## Main ########## -->
 	<main class="wrapper yellow-bg round-first">
 		<section>
@@ -30,24 +30,24 @@
 				<h3>New Seats</h3>
 				<p>Luxurious new layout!</p>
 				<!-- Picture taken from http://www.cinema-rooms.co.uk/wp-content/uploads/EasyRotatorStorage/user-content/erc_48_1345032745/content/assets/Dedicated%20Cinema%20Room-0.jpg only for educational purposes -->
-				<img class="round-only" src="static/img/seats.jpg" alt="New seats">
+				<img class="round-only" src="<?= getAssetUri('static/img/seats.jpg'); ?>" alt="New seats">
 			</article>
 
 			<article class="single-news">
 				<h3>New 3D Projection</h3>
 				<p>Be in the centre of the action!</p>
 				<!-- Image taken from http://blogs.telegraph.co.uk/technology/markchangizi/100004473/why-are-3d-movies-like-avatar-such-fun/ only for educational purposes -->
-				<img class="round-only" src="static/img/3d.jpg" alt="3d projection">
+				<img class="round-only" src="<?= getAssetUri('static/img/3d.jpg'); ?>" alt="3d projection">
 			</article>
 
 			<article class="single-news">
 				<h3>Dolby Sound System</h3>
 				<p>Sounds quality that'll blow you away!</p>
 				<!-- Picture taken from http://www.dolby.com/us/en/platforms/dolby-cinema.html only for educational purposes -->
-				<img class="round-only" src="static/img/dolby.jpg" alt="Dolby cinema">
+				<img class="round-only" src="<?= getAssetUri('static/img/dolby.jpg'); ?>" alt="Dolby cinema">
 			</article>
 		</section>
-		
+
 	</main>
 
 

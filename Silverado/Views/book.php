@@ -111,7 +111,7 @@
 		<?php } /* end else */ ?>
 	</main>
 
-	<script src="/static/js/booking.js"></script>
+	<script src="<?= getAssetUri('static/js/booking.js'); ?>"></script>
 
 <?php
 	// Footer: Do not remove.
