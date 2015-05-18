@@ -1,7 +1,7 @@
 		<form method="POST" action="http://titan.csit.rmit.edu.au/~e54061/wp/form-tester-2.php" class="brown-bg round-only">
 
 
-  			
+
 			<select>
 				<option value="empty">Select Screening Session</option>
 			<?php
@@ -69,9 +69,5 @@
 				</tbody>
 
 			</table>
-
-
-
-
 
 		</form>
