@@ -25,7 +25,7 @@ function getBaseUri()
 	$uri = 'http';
 	if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 		$uri .= 's';
-	$uri .= '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']);
+	$uri .= '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/';
 
 	return $uri;
 }
