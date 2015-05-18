@@ -32,7 +32,7 @@ class Router
 		if ($this->validateRoute($route)) {
 			$this->routes[] = $route;
 		}
-	
+
 	}
 
 
@@ -54,15 +54,15 @@ class Router
 		}
 
 		return true;
-	
+
 	}
 
 
-	public function getRouteByUri($uri)
+	public function getRoute($httpRequest)
 	{
 
 		foreach ($this->routes as $route) {
-			if ($route->validateUri($uri)) {
+			if ($route->validateHttpRequest($httpRequest)) {
 				return $route;
 			}
 		}

@@ -4,12 +4,14 @@ require_once('Config/Routes.php');
 
 use Silverado\Controllers\FrontController;
 use Silverado\Utils\Logger;
+use Silverado\Utils\HttpRequest;
 
-$uri = getValidatedUri();
-$route = $router->getRouteByUri($uri);
+$httpRequest = new HttpRequest();
+
+$route = $router->getRoute($httpRequest);
 
 if ($route) {
-	$route->callController($uri);
+	$route->callController($httpRequest);
 } else {
 	echo '404';
 }

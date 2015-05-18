@@ -8,17 +8,16 @@ class Route
 	protected $path;
 	protected $controller;
 	protected $action;
-	protected $args;
+	protected $args = [];
 
 
-	public function __construct($method, $path, $controller, $action = null, $args = [])
+	public function __construct($method, $path, $controller, $action = null)
 	{
 
 		$this->method = $method;
 		$this->path = $path;
 		$this->controller = $controller;
 		$this->action = $action;
-		$this->args = $args;
 
 	}
 
@@ -38,29 +37,28 @@ class Route
 
 	}
 
-	public function validateUri($uri)
+	public function validateHttpRequest($httpRequest)
 	{
 
-		$regex = '@' . $this->path . '@';
-		$valid = preg_match($regex, $uri, $this->args);
+		$validUri = preg_match('@'.$this->path.'@', $httpRequest->uri, $this->args);
+		$validMethod = $this->method === $httpRequest->method;
 
-		return $valid;
+		return ($validUri && $validMethod);
 
 	}
 
-	public function callController()
+	public function callController($httpRequest)
 	{
 
 
 		if ($this->action != null){
 			$controller = new $this->controller();
-			$controller->{$this->action}($this->args);
+			$controller->{$this->action}($httpRequest, $this->args);
 		} else {
-			$controller = new $this->controller($this->args);
+			$controller = new $this->controller($httpRequest, $this->args);
 		}
 
 	}
 
 
 }
-

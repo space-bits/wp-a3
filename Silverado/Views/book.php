@@ -103,7 +103,7 @@
 					</tr>
 				</table>
 			</div>
-		</form>	
+		</form>
 		<?php } /* end else */ ?>
 	</main>
 
@@ -113,4 +113,3 @@
 	// Footer: Do not remove.
 	include_once('inc/footer.php');
 ?>
-
