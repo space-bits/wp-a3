@@ -36,7 +36,7 @@
 							echo '<div class="screening-day">' . $day . '</div>';
 							echo '<div class="screening-times">';
 							foreach ($days[$day] as $screening) {
-								echo '<span class="screening-time"><a class="book-button" href="/book/' . $screening->id . '">' . $screening->time . '</a></span>';
+								echo '<span class="screening-time"><a class="book-button" href="' . getBaseUri() . 'book/' . $screening->id . '">' . $screening->time . '</a></span>';
 							}
 							echo '</div>';
 							echo '</div>';
