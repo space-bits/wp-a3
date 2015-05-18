@@ -9,7 +9,6 @@ class ContactController extends AbstractController {
 
 	}
 
-
 	public function contact($args = [])
 	{
 

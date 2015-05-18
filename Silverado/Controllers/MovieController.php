@@ -13,10 +13,8 @@ class MovieController extends AbstractController
 
 	public function __construct($args = [])
 	{
-	
-		
-	}
 
+	}
 
 	public function movie($args = [])
 	{

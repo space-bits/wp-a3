@@ -13,5 +13,5 @@ $route = $router->getRoute($httpRequest);
 if ($route) {
 	$route->callController($httpRequest);
 } else {
-	echo '404';
+	echo '404: The requested page could not be retrieved.';
 }
