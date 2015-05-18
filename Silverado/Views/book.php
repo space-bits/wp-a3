@@ -102,10 +102,10 @@
 						<td colspan=2><input type="submit" name="" value="Book"></td>
 					</tr>
 				</table>
-			</div>
-			<div class="voucher">
-				<h3>Enter your voucher here!</h3>
+				<span class="voucher">
+					<h3>Enter your voucher here!</h3>
 					<input name="code" id="voucher" value="" placeholder="12345-67890-TK" type="text" pattern="(\d+){5}-(\d+){5}-[a-zA-Z]{2}"></input>
+				</span>
 			</div>
 		</form>
 		<?php } /* end else */ ?>
