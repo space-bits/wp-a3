@@ -10,7 +10,7 @@
 				echo '<p>Sorry but we couldn\'t find your request.</p>';
 			} else {
 		?>
-		<form method="POST" action="/checkout.php" class="booking-form">
+		<form method="POST" action="/checkout" class="booking-form">
 			<div class="booking-half-wrapper">
 				<table class="booking-table round-table">
 					<thead>
