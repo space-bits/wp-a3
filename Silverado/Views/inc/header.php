@@ -12,7 +12,7 @@
 	<link href="//fonts.googleapis.com/css?family=Cabin:500" rel='stylesheet' type='text/css'>
 
 	<!-- Main stylesheet -->
-	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="<?= getAssetUri('static/css/style.css'); ?>">
 
 	<!-- Viewport for responsible layout -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,13 +22,13 @@
 	<!-- ########## Header ########## -->
 	<header class="wrapper">
 		<h1 class="header-light-shadow half-wrapper">
-			<a href="/">Silverado Cinema</a>
+			<a href="<?= getBaseUri(); ?>">Silverado Cinema</a>
 		</h1>
 		<nav class="half-wrapper">
 			<ul class="header-light-shadow">
-				<li><a href="/">Home</a></li>
-				<li><a href="/movie">Movies</a></li>
-				<li><a href="/contact">Contact</a></li>
+				<li><a href="<?= getBaseUri(); ?>">Home</a></li>
+				<li><a href="<?= getBaseUri(); ?>movie">Movies</a></li>
+				<li><a href="<?= getBaseUri(); ?>contact">Contact</a></li>
 			</ul>
 		</nav>
 	</header>

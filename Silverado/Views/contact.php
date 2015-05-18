@@ -18,7 +18,7 @@
 					<option value="Suggestion &amp; Complaints">Suggestions &amp; Complaints</option>
 				</datalist>
 				<textarea id="message" class="form-field form-last-element round-last" name="message" placeholder="Let us know what you think!" required></textarea>
-				
+
 				<label><input id="test-email" type='checkbox' name='test-email' value='true'> Send me a copy of this message.</label>
 
 				<input type="submit" class="form-field round-only" id="submit" value="Send">
@@ -36,27 +36,9 @@
 
 	<!-- Google maps api js-->
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
-	<script src="/static/js/google-maps.js"></script>
+	<script src="<?= getAssetUri('static/js/google-maps.js'); ?>"></script>
 <?php
 	// Footer: Do not remove.
 	include_once('inc/aside.php');
 	include_once('inc/footer.php');
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
