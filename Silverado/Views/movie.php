@@ -14,7 +14,7 @@
 	</main>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="/static/js/toggle.js"></script>
+	<script src="<?= getAssetUri('static/js/toggle.js'); ?>"></script>
 
 <?php
 	// Footer: Do not remove.
