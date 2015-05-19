@@ -45,7 +45,7 @@ class Router
 		}
 		if (class_exists($route->controller)) {
 			if ($route->action != null && !method_exists($route->controller, $route->action)) {
-				echo('Trying to add a route with an invalid action.: ' . $route . '<br>');
+				echo('Trying to add a route with an invalid action: ' . $route . '<br>');
 				return false;
 			}
 		} else {

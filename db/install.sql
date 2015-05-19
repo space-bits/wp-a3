@@ -8,6 +8,8 @@ CREATE TABLE movie (
 	imgPath VARCHAR(100),
 	description VARCHAR(200),
 	storyline TEXT,
+	trailer VARCHAR(50),
+	relDate VARCHAR(25),
 	active INTEGER NOT NULL DEFAULT 1
 );
 
