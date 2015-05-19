@@ -5,11 +5,11 @@
 
 	<main class="wrapper yellow-bg round-first">
 		<h2>Checkout</h2>
-		<article>
-			<div class="basket">
-				
-			</div>
-		</article>
+
+			<form method="POST" action="" class="login-form">
+				<input type="text" placeholder="User Name" required>
+				<input type="password" placeholder="Password" required>
+			</form>
 	</main>
 
 <?php

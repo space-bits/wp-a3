@@ -10,7 +10,7 @@ class UserModel extends AbstractModel {
 
 	protected $active;
 
-	//Script taken from ScreeningModel
+	//Script taken from ScreeningModel.php
 	public function userTest() {
 		$db = Model::getDb();
 
