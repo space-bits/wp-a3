@@ -41,6 +41,17 @@
 							echo '</div>';
 							echo '</div>';
 						}
+						$trs = [];
+						foreach ($movie->trailers as $trailer) {
+							$trs[$movie->trailer][] = $trailer;
+						}
+						foreach ($trs as $trailer => $trailer) {
+							echo '<video width="400" controls>';
+							echo '<source src="' . $trailer . '" type="video/mp4">':
+							echo '<source src="mov_bbb.ogg" type="video/ogg">';
+							echo 'Your browser does not support HTML5 video.';
+							echo '</video>';
+						}
 					?>
 				</div>
 			</div>
