@@ -45,6 +45,16 @@ body {
 	color: #F3F781;
 }
 
+.dark-bg {
+	background: #191919;
+	color: #F3F781;
+}
+
+#session-nav .wrapper {
+	text-align: right;
+	padding: 5px 20px;
+}
+
 .transparent-bg {
 	background: transparent;
 }
@@ -250,7 +260,7 @@ section:last-child {
 .description {
 	padding-bottom: 5px;
 }
- 
+
 /* Form Elements Here */
 .contact-form
 {
@@ -387,7 +397,7 @@ footer span {
 }
 
 .movie-img{
-	
+
 	min-width: 195px;
 	padding-right: 15px;
 }
@@ -646,7 +656,7 @@ a.book-button {
 		box-sizing: border-box;
 		order: 2;
 	}
-	
+
 	.booking-form {
 		flex-wrap: wrap;
 	}
@@ -742,7 +752,7 @@ a.book-button {
 		width: 100%;
 	}
 
-	.contact-form { 
+	.contact-form {
 		width: 100%;
 		box-sizing: border-box;
 		order: 2;
