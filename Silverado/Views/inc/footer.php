@@ -9,11 +9,16 @@
         <div id="validators" class="text-right half-wrapper">
         	<span>Validators:</span>
     		<span>
-    			<a href="http://validator.w3.org/check?uri=referer">html</a> | 
+    			<a href="http://validator.w3.org/check?uri=referer">html</a> |
     			<a href="http://jigsaw.w3.org/css-validator/check/referer">css</a>
 			</span>
 	    </div>
 	</footer>
+	<?php
+		if (file_exists("/home/eh1/e54061/public_html/wp/debug.php")) {
+			include_once("/home/eh1/e54061/public_html/wp/debug.php");
+		}
+	?>
 
 </body>
 </html>
