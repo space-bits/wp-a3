@@ -56,7 +56,7 @@ abstract class AbstractModel {
 	 */
 	public function __set($name, $value) {
 		// Don't allow to set IDs because they are generated automatically by the database.
-		if (property_exists($this, $name)) { 
+		if (property_exists($this, $name)) {
 			$validateMethod = 'validate' . ucfirst($name);
 			if (!method_exists($this, $validateMethod) ||
 				 method_exists($this, $validateMethod) && $this->$validateMethod($value)) {
@@ -89,7 +89,7 @@ abstract class AbstractModel {
 	}
 
 	protected function getTableColumns() {
-		$db = AbstractModel::getDb();
+		$db = self::getDb();
 
 		$class = get_called_class();
 		$table = $this->getTableName($class);
@@ -107,7 +107,7 @@ abstract class AbstractModel {
 	 * Get all instances of the calling Class
 	 */
 	public static function getAll() {
-		$db = AbstractModel::getDb();
+		$db = self::getDb();
 
 		$class = get_called_class();
 		$table = self::getTableName($class);
@@ -123,7 +123,7 @@ abstract class AbstractModel {
 	 * Get all instances of the calling Class
 	 */
 	public static function getAllByForeignId($foreignTable, $foreignId) {
-		$db = AbstractModel::getDb();
+		$db = self::getDb();
 
 		$class = get_called_class();
 		$table = self::getTableName($class);
@@ -140,7 +140,7 @@ abstract class AbstractModel {
 	 * Get a instance of the calling Class with the given $id
 	 */
 	public static function getById($id) {
-		$db = AbstractModel::getDb();
+		$db = self::getDb();
 
 		$class = get_called_class();
 		$table = self::getTableName($class);
@@ -153,7 +153,7 @@ abstract class AbstractModel {
 	}
 
 	public function save() {
-		$db = AbstractModel::getDb();
+		$db = self::getDb();
 
 		$class = get_called_class();
 		$table = $this->getTableName($class);
@@ -178,7 +178,7 @@ abstract class AbstractModel {
 	}
 
 	public function delete() {
-		$db = AbstractModel::getDb();
+		$db = self::getDb();
 		$stmt = $db->prepare('UPDATE ' . $this->getTableName($class) . ' SET active=0 WHERE id=?');
 		$stmt->execute(array($this->id));
 	}
