@@ -8,5 +8,5 @@ $router = new Router([
 	new Route('GET', '^/movie/?$', 'Silverado\Controllers\MovieController', 'movie'),
 	new Route('GET', '^/book/(\d+)/?$', 'Silverado\Controllers\BookController', 'book'),
 	new Route('GET', '^/contact/?$', 'Silverado\Controllers\ContactController', 'contact'),
-	new Route('GET', '^/checkout/?$', 'Silverado\Controllers\CheckoutController', 'checkout')
+	new Route('POST', '^/checkout/?$', 'Silverado\Controllers\CheckoutController', 'checkout')
 ]);
