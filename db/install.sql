@@ -38,8 +38,11 @@ CREATE TABLE price (
 
 CREATE TABLE user (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	name VARCHAR(50),
+	username VARCHAR(50),
+	password VARCHAR(200),
+	firstname VARCHAR(50),
+	lastname VARCHAR(50),
 	phone VARCHAR(50),
 	email VARCHAR(50),
-	actve INTEGER NOT NULL DEFAULT 1
+	active INTEGER NOT NULL DEFAULT 1
 );
