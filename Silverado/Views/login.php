@@ -8,12 +8,10 @@
 		<?php
 		//search db for existing user, if user exists set session with their details and assign booking to their account
 		//else, add new user and set booking to their account
+
+
+		include('inc/single-login.php');
 		?>
-			<form method="POST" action="<?= getBaseUri(); ?>login" class="login-form">
-				<input name="username" type="text" placeholder="User Name" required>
-				<input name="password" type="password" placeholder="Password" required>
-				<input type="submit">
-			</form>
 	</main>
 
 <?php
