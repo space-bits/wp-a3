@@ -45,7 +45,7 @@
 
 					<video width="400" controls>
 					<source src="<?= $movie->trailer; ?>" type="video/mp4">
-					<source src="mov_bbb.ogg" type="video/ogg">
+					<source src="<?= $movie->trailer; ?>" type="video/ogg">
 					Your browser does not support HTML5 video.
 					</video>
 				</div>
