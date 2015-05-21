@@ -632,8 +632,11 @@ a.book-button {
 	}
 
 	.more-info {
-		padding-left: 1%;
 		margin: 5px 0 15px 0;
+	}
+
+	.more-info-text {
+		padding-left: 15px;
 	}
 
 	.screening {

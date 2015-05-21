@@ -17,7 +17,7 @@
 				</div>
 				<div class="description"><?= $movie->description; ?></div>
 				<div class="storyline"><?= $movie->storyline; ?></div>
-				<div class="more-info btn"><h3>Session Times</h3></div>
+				<div class="more-info btn"><h3 class="more-info-text">More Info</h3></div>
 
 
 				<div class="screenings round-only" style="display: none">
