@@ -7,10 +7,12 @@ class ScreeningModel extends AbstractModel {
 	protected $time;
 	protected $movieId;
 	protected $priceId;
+	protected $roomId;
 
 	// Not present in the database but present here for lazyloading the objects
 	protected $movie;
 	protected $price;
+	protected $room;
 
 
 }

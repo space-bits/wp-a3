@@ -109,6 +109,21 @@
 			</div>
 		</form>
 		<?php } /* end else */ ?>
+
+
+		<div class="room room-<?= $this->screening->room->name; ?>">
+		<?php foreach ($this->screening->room->sectors as $sector) { ?>
+			<div class="sector sector-<?= $sector->name; ?>">
+			<?php foreach ($sector->seats as $seat) { ?>
+				<div class="seat row-<?= $seat->row; ?> seat-<?= $seat->row . $seat->column; ?> status-<?= $seat->getStatus(); ?>">
+					<?= $seat->row . $seat->column; ?>
+				</div>
+			<?php } // end foreach $seats ?>
+			</div>
+		<?php } // end foreach $sectors ?>
+		</div>
+
+
 	</main>
 
 	<script src="<?= getAssetUri('static/js/booking.js'); ?>"></script>

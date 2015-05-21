@@ -19,6 +19,7 @@ CREATE TABLE screening (
 	time VARCHAR(5),
 	movieId INTEGER,
 	priceId INTEGER,
+	roomId INTEGER,
 	active INTEGER NOT NULL DEFAULT 1
 );
 

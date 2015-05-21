@@ -534,6 +534,46 @@ a.book-button {
 	padding: 5px 20px;
 }
 
+
+/* ============ SEATS =================*/
+.room {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+}
+.sector {
+	width: 33%;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	margin-top: 10px;
+}
+.sector-Right .seat, .sector-Left .seat {
+	width: 20%;
+}
+.sector-Middle .seat, .row-D, .row-C {
+	width: 25%;
+}
+.row-B {
+	width: 33.3%;
+}
+.row-A {
+	width: 50%;
+}
+
+.status-Available {
+	background-color: green;
+}
+
+.status-Taken {
+	background-color: red;
+}
+
+.status-Reserved {
+	background-color: lightgray;
+}
+
 /* ========== Media Queries ========== */
 @media screen and (max-width: 1040px) {
 	body {

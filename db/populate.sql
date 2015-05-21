@@ -60,13 +60,13 @@ insert into movie values(
 );
 
 
-INSERT INTO screening VALUES (1, 'Monday', '1pm', 3, 1, 1), (2, 'Monday', '6pm', 4, 1, 1), (3, 'Monday', '9pm', 2, 1, 1);
-INSERT INTO screening VALUES (4, 'Tuesday', '1pm', 3, 1, 1), (5, 'Tuesday', '6pm', 4, 1, 1), (6, 'Tuesday', '9pm', 2, 1, 1);
-INSERT INTO screening VALUES (7, 'Wednesday', '1pm', 2, 1, 1), (8, 'Wednesday', '6pm', 3, 2, 1), (9, 'Wednesday', '9pm', 1, 2, 1);
-INSERT INTO screening VALUES (10, 'Thursday', '1pm', 2, 1, 1), (11, 'Thursday', '6pm', 3, 2, 1), (12, 'Thursday', '9pm', 1, 2, 1);
-INSERT INTO screening VALUES (13, 'Friday', '1pm', 2, 1, 1), (14, 'Friday', '6pm', 3, 2, 1), (15, 'Friday', '9pm', 1, 2, 1);
-INSERT INTO screening VALUES (16, 'Saturday', '12pm', 3, 2, 1), (17, 'Saturday', '3pm', 4, 2, 1), (18, 'Saturday', '6pm', 2, 2, 1), (19, 'Saturday', '9pm', 1, 2, 1);
-INSERT INTO screening VALUES (20, 'Sunday', '12pm', 3, 2, 1), (21, 'Sunday', '3pm', 4, 2, 1), (22, 'Sunday', '6pm', 2, 2, 1), (23, 'Sunday', '9pm', 1, 2, 1);
+INSERT INTO screening VALUES (1, 'Monday', '1pm', 3, 1, 1, 1), (2, 'Monday', '6pm', 4, 1, 1, 1), (3, 'Monday', '9pm', 2, 1, 1, 1);
+INSERT INTO screening VALUES (4, 'Tuesday', '1pm', 3, 1, 1, 1), (5, 'Tuesday', '6pm', 4, 1, 1, 1), (6, 'Tuesday', '9pm', 2, 1, 1, 1);
+INSERT INTO screening VALUES (7, 'Wednesday', '1pm', 2, 1, 1, 1), (8, 'Wednesday', '6pm', 3, 2, 1, 1), (9, 'Wednesday', '9pm', 1, 2, 1, 1);
+INSERT INTO screening VALUES (10, 'Thursday', '1pm', 2, 1, 1, 1), (11, 'Thursday', '6pm', 3, 2, 1, 1), (12, 'Thursday', '9pm', 1, 2, 1, 1);
+INSERT INTO screening VALUES (13, 'Friday', '1pm', 2, 1, 1, 1), (14, 'Friday', '6pm', 3, 2, 1, 1), (15, 'Friday', '9pm', 1, 2, 1, 1);
+INSERT INTO screening VALUES (16, 'Saturday', '12pm', 3, 2, 1, 1), (17, 'Saturday', '3pm', 4, 2, 1, 1), (18, 'Saturday', '6pm', 2, 2, 1, 1), (19, 'Saturday', '9pm', 1, 2, 1, 1);
+INSERT INTO screening VALUES (20, 'Sunday', '12pm', 3, 2, 1, 1), (21, 'Sunday', '3pm', 4, 2, 1, 1), (22, 'Sunday', '6pm', 2, 2, 1, 1), (23, 'Sunday', '9pm', 1, 2, 1, 1);
 
 
 INSERT INTO price VALUES (1, 'Discount', 12, 10, 8, 25, 20, 20, 20, 20, 1);
@@ -85,22 +85,22 @@ INSERT INTO sector VALUES (3, 'Right', 1, 1);
 INSERT INTO sector VALUES (4, 'Front', 1, 1);
 
 
-INSERT INTO seat VALUES (1, 'E', '1', 1, 1), (2, 'E', '2', 1, 1), (3, 'E', '3', 1, 1), (4, 'E', '4', 1, 1), (5, 'E', '5', 1, 1);
-INSERT INTO seat VALUES (6, 'F', '1', 1, 1), (7, 'F', '2', 1, 1), (8, 'F', '3', 1, 1), (9, 'F', '4', 1, 1), (10, 'F', '5', 1, 1);
-INSERT INTO seat VALUES (11, 'G', '1', 1, 1), (12, 'G', '2', 1, 1), (13, 'G', '3', 1, 1), (14, 'G', '4', 1, 1), (15, 'G', '5', 1, 1);
-INSERT INTO seat VALUES (16, 'H', '1', 1, 1), (17, 'H', '2', 1, 1), (18, 'H', '3', 1, 1), (19, 'H', '4', 1, 1), (20, 'H', '5', 1, 1);
+INSERT INTO seat VALUES (1, 'H', '1', 1, 1), (2, 'H', '2', 1, 1), (3, 'H', '3', 1, 1), (4, 'H', '4', 1, 1), (5, 'H', '5', 1, 1);
+INSERT INTO seat VALUES (6, 'G', '1', 1, 1), (7, 'G', '2', 1, 1), (8, 'G', '3', 1, 1), (9, 'G', '4', 1, 1), (10, 'G', '5', 1, 1);
+INSERT INTO seat VALUES (11, 'F', '1', 1, 1), (12, 'F', '2', 1, 1), (13, 'F', '3', 1, 1), (14, 'F', '4', 1, 1), (15, 'F', '5', 1, 1);
+INSERT INTO seat VALUES (16, 'E', '1', 1, 1), (17, 'E', '2', 1, 1), (18, 'E', '3', 1, 1), (19, 'E', '4', 1, 1), (20, 'E', '5', 1, 1);
 
-INSERT INTO seat VALUES (21, 'E', '6', 2, 1), (22, 'E', '7', 2, 1), (23, 'E', '8', 2, 1), (24, 'E', '9', 2, 1), (25, 'E', '10', 2, 1);
-INSERT INTO seat VALUES (26, 'F', '6', 2, 1), (27, 'F', '7', 2, 1), (28, 'F', '8', 2, 1), (29, 'F', '9', 2, 1), (30, 'F', '10', 2, 1);
-INSERT INTO seat VALUES (31, 'G', '6', 2, 1), (32, 'G', '7', 2, 1), (33, 'G', '8', 2, 1), (34, 'G', '9', 2, 1), (35, 'G', '10', 2, 1);
-INSERT INTO seat VALUES (36, 'H', '6', 2, 1), (37, 'H', '7', 2, 1), (38, 'H', '8', 2, 1), (39, 'H', '9', 2, 1), (40, 'H', '10', 2, 1);
+INSERT INTO seat VALUES (21, 'H', '6', 2, 1), (22, 'H', '7', 2, 1), (23, 'H', '8', 2, 1), (24, 'H', '9', 2, 1);
+INSERT INTO seat VALUES (25, 'G', '6', 2, 1), (26, 'G', '7', 2, 1), (27, 'G', '8', 2, 1), (28, 'G', '9', 2, 1);
+INSERT INTO seat VALUES (29, 'F', '6', 2, 1), (30, 'F', '7', 2, 1), (31, 'F', '8', 2, 1), (32, 'F', '9', 2, 1);
+INSERT INTO seat VALUES (33, 'E', '6', 2, 1), (34, 'E', '7', 2, 1), (35, 'E', '8', 2, 1), (36, 'E', '9', 2, 1);
 
-INSERT INTO seat VALUES (41, 'E', '10', 3, 1), (42, 'E', '11', 3, 1), (43, 'E', '12', 3, 1), (44, 'E', '13', 3, 1), (45, 'E', '14', 3, 1);
-INSERT INTO seat VALUES (46, 'F', '10', 3, 1), (47, 'F', '11', 3, 1), (48, 'F', '12', 3, 1), (49, 'F', '13', 3, 1), (50, 'F', '14', 3, 1);
-INSERT INTO seat VALUES (51, 'G', '10', 3, 1), (52, 'G', '11', 3, 1), (53, 'G', '12', 3, 1), (54, 'G', '13', 3, 1), (55, 'G', '14', 3, 1);
-INSERT INTO seat VALUES (56, 'H', '10', 3, 1), (57, 'H', '11', 3, 1), (58, 'H', '12', 3, 1), (59, 'H', '13', 3, 1), (60, 'H', '14', 3, 1);
+INSERT INTO seat VALUES (37, 'H', '10', 3, 1), (38, 'H', '11', 3, 1), (39, 'H', '12', 3, 1), (40, 'H', '13', 3, 1), (41, 'H', '14', 3, 1);
+INSERT INTO seat VALUES (42, 'G', '10', 3, 1), (43, 'G', '11', 3, 1), (44, 'G', '12', 3, 1), (45, 'G', '13', 3, 1), (46, 'G', '14', 3, 1);
+INSERT INTO seat VALUES (47, 'F', '10', 3, 1), (48, 'F', '11', 3, 1), (49, 'F', '12', 3, 1), (50, 'F', '13', 3, 1), (51, 'F', '14', 3, 1);
+INSERT INTO seat VALUES (52, 'E', '10', 3, 1), (53, 'E', '11', 3, 1), (54, 'E', '12', 3, 1), (55, 'E', '13', 3, 1), (56, 'E', '14', 3, 1);
 
-INSERT INTO seat VALUES (61, 'A', '01', 4, 1), (62, 'A', '02', 4, 1);
-INSERT INTO seat VALUES (63, 'B', '01', 4, 1), (64, 'B', '02', 4, 1), (65, 'B', '03', 4, 1);
-INSERT INTO seat VALUES (66, 'C', '01', 4, 1), (67, 'C', '02', 4, 1), (68, 'C', '03', 4, 1), (69, 'C', '04', 4, 1);
-INSERT INTO seat VALUES (70, 'D', '01', 4, 1), (71, 'D', '02', 4, 1), (72, 'D', '03', 4, 1), (73, 'D', '04', 4, 1);
+INSERT INTO seat VALUES (57, 'D', '01', 4, 1), (58, 'D', '02', 4, 1), (59, 'D', '03', 4, 1), (60, 'D', '04', 4, 1);
+INSERT INTO seat VALUES (61, 'C', '01', 4, 1), (62, 'C', '02', 4, 1), (63, 'C', '03', 4, 1), (64, 'C', '04', 4, 1);
+INSERT INTO seat VALUES (65, 'B', '01', 4, 1), (66, 'B', '02', 4, 1), (67, 'B', '03', 4, 1);
+INSERT INTO seat VALUES (68, 'A', '01', 4, 1), (69, 'A', '02', 4, 1);
