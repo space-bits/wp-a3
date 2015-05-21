@@ -17,7 +17,7 @@
 				</div>
 				<div class="description"><?= $movie->description; ?></div>
 				<div class="storyline"><?= $movie->storyline; ?></div>
-				<div class="more-info btn"><h3>Session Times</h3></div>
+				<div class="more-info btn"><h3>More Info</h3></div>
 
 
 				<div class="screenings round-only" style="display: none">
@@ -48,7 +48,7 @@
 						<source src="<?= $movie->trailer; ?>" type="video/ogg">
 						Your browser does not support HTML5 video.
 						</video>
-						<p>Release Date:<i> <?= $movie->relDate; ?> </i> </p>
+						<p>Release Date:<i><?= $movie->relDate; ?></i></p>
 						<p><i><a href="<?= $movie->offSite; ?>">Official Site</a></i></p>
 				</div>
 			</div> <!-- .movie-info -->
