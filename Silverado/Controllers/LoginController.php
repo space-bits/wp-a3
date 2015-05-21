@@ -16,22 +16,22 @@ class LoginController extends AbstractController
 
 
 
-	public function __construct($httpRequest = [], $args = [])
+	public function __construct(HttpRequest $httpRequest, array $args)
 	{
 
 
 	}
 
 
-	public function displayForm($httpRequest = [], $args = [])
+	public function displayForm(HttpRequest $httpRequest, array $args)
 	{
 
 		$this->renderView('login');
 
 	}
-	
 
-	public function validateLogin($httpRequest = [], $args = [])
+
+	public function validateLogin(HttpRequest $httpRequest, array $args)
 	{
 		if (!isset($httpRequest->vars['username']) || !$httpRequest->vars['password']) {
 			$this->renderView('login');
@@ -52,7 +52,7 @@ class LoginController extends AbstractController
 
 	}
 
-	public function logout($httpRequest = [], $args = [])
+	public function logout(HttpRequest $httpRequest, array $args)
 	{
 
 		unset($_SESSION['user']);

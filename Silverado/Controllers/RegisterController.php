@@ -11,14 +11,14 @@ class RegisterController extends AbstractController
 {
 
 
-	public function __construct(HttpRequest $httpRequest, $args)
+	public function __construct(HttpRequest $httpRequest, array $args)
 	{
 
 
 	}
 
 
-	public function displayForm(HttpRequest $httpRequest, $args)
+	public function displayForm(HttpRequest $httpRequest, array $args)
 	{
 
 		$this->renderView('register');
@@ -26,10 +26,10 @@ class RegisterController extends AbstractController
 	}
 
 
-	public function validateRegistration(HttpRequest $httpRequest, $args)
+	public function validateRegistration(HttpRequest $httpRequest, array $args)
 	{
 
-		
+
 
 	}
 

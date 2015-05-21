@@ -2,6 +2,7 @@
 namespace Silverado\Controllers;
 
 use Silverado\Models\ScreeningModel;
+use Silverado\Utils\HttpRequest;
 
 class BookController extends AbstractController
 {
@@ -9,14 +10,14 @@ class BookController extends AbstractController
 	protected $screening;
 
 
-	public function __construct($httpRequest = [], $args = [])
+	public function __construct(HttpRequest $httpRequest, array $args)
 	{
 
 
 
 	}
 
-	public function book($httpRequest = [], $args = [])
+	public function book(HttpRequest $httpRequest, array $args)
 	{
 
 		$this->screening = ScreeningModel::getById($args[1]);
