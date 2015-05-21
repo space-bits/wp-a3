@@ -50,12 +50,9 @@ class Route
 	public function callController($httpRequest)
 	{
 
-
+		$controller = new $this->controller($httpRequest, $this->args);
 		if ($this->action != null){
-			$controller = new $this->controller();
 			$controller->{$this->action}($httpRequest, $this->args);
-		} else {
-			$controller = new $this->controller($httpRequest, $this->args);
 		}
 
 	}

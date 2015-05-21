@@ -11,6 +11,8 @@ $router = new Router([
 	new Route('POST', '^/checkout/?$', 'Silverado\Controllers\CheckoutController', 'checkout'),
 	new Route('GET', '^/login/?$', 'Silverado\Controllers\LoginController', 'displayForm'),
 	new Route('POST', '^/login/?$', 'Silverado\Controllers\LoginController', 'validateLogin'),
-	new Route('GET', '^/logout/?$', 'Silverado\Controllers\LoginController', 'logout')
+	new Route('GET', '^/logout/?$', 'Silverado\Controllers\LoginController', 'logout'),
+	new Route('GET', '^/register/?$', 'Silverado\Controllers\RegisterController', 'displayForm'),
+	new Route('POST', '^/register/?$', 'Silverado\Controllers\RegisterController', 'validateRegistration')
 
 ]);
