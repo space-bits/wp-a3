@@ -18,6 +18,8 @@
 			<p>Oh no! It seems you've entered the wrong password. If this is your account, this issue can be resolved by <a href="#">reseting your password</a>. </p>
 		</div>
 	</main>
+	
+	<script src="<?= getAssetUri('static/js/errorToggle.js'); ?>"></script>
 
 <?php
 	// Footer: Do not remove.
