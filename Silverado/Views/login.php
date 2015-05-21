@@ -9,9 +9,10 @@
 		//search db for existing user, if user exists set session with their details and assign booking to their account
 		//else, add new user and set booking to their account
 		?>
-			<form method="POST" action="/checkout" class="login-form">
-				<input type="text" placeholder="User Name" required>
-				<input type="password" placeholder="Password" required>
+			<form method="POST" action="<?= getBaseUri(); ?>login" class="login-form">
+				<input name="username" type="text" placeholder="User Name" required>
+				<input name="password" type="password" placeholder="Password" required>
+				<input type="submit">
 			</form>
 	</main>
 

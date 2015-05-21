@@ -11,6 +11,8 @@ class MovieModel extends AbstractModel {
 	protected $imgPath;
 	protected $description;
 	protected $storyline;
+	protected $trailer;
+	protected $relDate;
 
 	protected $screenings;
 

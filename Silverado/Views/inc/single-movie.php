@@ -13,17 +13,12 @@
 							<span class="duration"><?= $movie->duration; ?> min</span> |
 							<span class="genre"><?= $movie->genre; ?></span>
 						</div>
-					</div> <!-- .movie-info-header -->
-					<!-- <div class="movie-buy-tickets">
-						<a href="book.php?movie_id=<?= $movie->id; ?>" class="book-button">Book</a>
-					</div> -->
+					</div>
 				</div>
 				<div class="description"><?= $movie->description; ?></div>
 				<div class="storyline"><?= $movie->storyline; ?></div>
 				<div class="more-info btn"><h3>Session Times</h3></div>
-			 <!-- .movie-info -->
 
-			<!-- .screeings-info -->
 
 				<div class="screenings round-only" style="display: none">
 					<?php
@@ -31,28 +26,28 @@
 						foreach ($movie->screenings as $screening) {
 							$days[$screening->day][] = $screening;
 						}
-						foreach ($days as $day => $sc) {
-							echo '<div class="screening">';
-							echo '<div class="screening-day">' . $day . '</div>';
-							echo '<div class="screening-times">';
-							foreach ($days[$day] as $screening) {
-								echo '<span class="screening-time"><a class="book-button" href="' . getBaseUri() . 'book/' . $screening->id . '">' . $screening->time . '</a></span>';
-							}
-							echo '</div>';
-							echo '</div>';
-						}
-						$trs = [];
-						foreach ($movie->trailers as $trailer) {
-							$trs[$movie->trailer][] = $trailer;
-						}
-						foreach ($trs as $trailer => $trailer) {
-							echo '<video width="400" controls>';
-							echo '<source src="' . $trailer . '" type="video/mp4">':
-							echo '<source src="mov_bbb.ogg" type="video/ogg">';
-							echo 'Your browser does not support HTML5 video.';
-							echo '</video>';
-						}
 					?>
+
+					<?php foreach ($days as $day => $sc) { ?>
+						<div class="screening">
+						<div class="screening-day"><?= $day; ?></div>
+						<div class="screening-times">
+						<?php foreach ($days[$day] as $screening) { ?>
+							<span class="screening-time">
+								<a class="book-button" href="<?= getBaseUri() . 'book/' . $screening->id; ?>">
+									<?= $screening->time; ?>
+								</a>
+							</span>
+						<?php } ?>
+						</div>
+						</div>
+					<?php } ?>
+
+					<video width="400" controls>
+					<source src="<?= $movie->trailer; ?>" type="video/mp4">
+					<source src="mov_bbb.ogg" type="video/ogg">
+					Your browser does not support HTML5 video.
+					</video>
 				</div>
-			</div>
+			</div> <!-- .movie-info -->
 		</article>

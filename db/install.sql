@@ -8,7 +8,7 @@ CREATE TABLE movie (
 	imgPath VARCHAR(100),
 	description VARCHAR(200),
 	storyline TEXT,
-	trailer VARCHAR(50),
+	trailer VARCHAR(200),
 	relDate VARCHAR(25),
 	active INTEGER NOT NULL DEFAULT 1
 );
@@ -38,10 +38,11 @@ CREATE TABLE price (
 
 CREATE TABLE user (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	user VARCHAR(50),
-	hash VARCHAR(255),
-	name VARCHAR(50),
+	username VARCHAR(50),
+	password VARCHAR(200),
+	firstname VARCHAR(50),
+	lastname VARCHAR(50),
 	phone VARCHAR(50),
 	email VARCHAR(50),
-	actve INTEGER NOT NULL DEFAULT 1
+	active INTEGER NOT NULL DEFAULT 1
 );

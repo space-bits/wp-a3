@@ -3,18 +3,27 @@ namespace Silverado\Models;
 
 class UserModel extends AbstractModel {
 
-	protected $id;
-	protected $name;
+	protected $username;
+	protected $password;
+	protected $firstname;
+	protected $lastname;
 	protected $phone;
 	protected $email;
 
-	protected $active;
 
-	//Script taken from ScreeningModel.php
-	public function userTest() {
-		$db = Model::getDb();
+	// TODO: URGENT! Add cryptography on the password.
+	public static function validateLogin($username, $password)
+	{
 
-		$stmt = $db->exec("INSERT INTO user (name, phone, email) VALUES('John Doe', '555-555-555', 'JD@email.com'");
+		$db = self::getDb();
+
+		$stmt = $db->prepare('SELECT * FROM user WHERE username=? AND password=?');
+		if ($stmt->execute(array($username, $password))) {
+			return new UserModel($stmt->fetch());
+		}
+		return null;
+
 	}
+
 
 }

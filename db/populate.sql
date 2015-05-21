@@ -71,3 +71,6 @@ INSERT INTO screening VALUES (20, 'Sunday', '12pm', 3, 2, 1), (21, 'Sunday', '3p
 
 INSERT INTO price VALUES (1, 'Discount', 12, 10, 8, 25, 20, 20, 20, 20, 1);
 INSERT INTO price VALUES (2, 'Full fare', 18, 15, 12, 30, 25, 30, 30, 30, 1);
+
+
+INSERT INTO user VALUES (1, 'admin', 'password', '', '', '', 'admin@email.com', 1);
