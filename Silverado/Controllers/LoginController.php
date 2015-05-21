@@ -9,7 +9,7 @@ class LoginController extends AbstractController
 {
 
 	protected $user;
-	protected $password;
+	protected $hash;
 
 	public function __construct($httpRequest = [], $args = [])
 	{
@@ -19,4 +19,8 @@ class LoginController extends AbstractController
 
 	}
 
+	public function encrypt($hash)
+	{
+		password_hash($hash, PASSWORD_DEFAULT);
+	}
 }
