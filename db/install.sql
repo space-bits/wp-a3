@@ -10,6 +10,7 @@ CREATE TABLE movie (
 	storyline TEXT,
 	trailer VARCHAR(200),
 	relDate VARCHAR(25),
+	offSIte VARCHAR(100),
 	active INTEGER NOT NULL DEFAULT 1
 );
 

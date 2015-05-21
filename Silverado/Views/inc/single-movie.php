@@ -43,11 +43,13 @@
 						</div>
 					<?php } ?>
 
-					<video width="400" controls>
-					<source src="<?= $movie->trailer; ?>" type="video/mp4">
-					<source src="<?= $movie->trailer; ?>" type="video/ogg">
-					Your browser does not support HTML5 video.
-					</video>
+						<video width="400" controls>
+						<source src="<?= $movie->trailer; ?>" type="video/mp4">
+						<source src="<?= $movie->trailer; ?>" type="video/ogg">
+						Your browser does not support HTML5 video.
+						</video>
+						<p>Release Date:<i> <?= $movie->relDate; ?> </i> </p>
+						<p><i><a href="<?= $movie->offSite; ?>">Official Site</a></i></p>
 				</div>
 			</div> <!-- .movie-info -->
 		</article>
