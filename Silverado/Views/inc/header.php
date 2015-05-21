@@ -20,6 +20,7 @@
 
 <body>
 	<!-- ########## Header ########## -->
+	<?php include_once('session-nav.php'); ?>
 	<header class="wrapper">
 		<h1 class="header-light-shadow half-wrapper">
 			<a href="<?= getBaseUri(); ?>">Silverado Cinema</a>

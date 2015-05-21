@@ -43,11 +43,23 @@ class LoginController extends AbstractController
 		$user = UserModel::validateLogin($username, $password);
 
 		// TODO: Better login interface. Needs Session.
-		if ($user)
+		if ($user) {
+			$_SESSION['user'] = $user;
 			$this->renderView('index');
-		else
+		} else {
 			$this->renderView('login');
+		}
+
+	}
+
+	public function logout($httpRequest = [], $args = [])
+	{
+
+		unset($_SESSION['user']);
+		$this->renderView('index');
 
 
 	}
+
+
 }

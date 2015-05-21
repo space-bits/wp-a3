@@ -11,15 +11,18 @@ class UserModel extends AbstractModel {
 	protected $email;
 
 
-	// TODO: URGENT! Add cryptography on the password.
 	public static function validateLogin($username, $password)
 	{
 
 		$db = self::getDb();
 
-		$stmt = $db->prepare('SELECT * FROM user WHERE username=? AND password=?');
-		if ($stmt->execute(array($username, $password))) {
-			return new UserModel($stmt->fetch());
+		$stmt = $db->prepare('SELECT * FROM user WHERE username=?');
+		if ($stmt->execute(array($username))) {
+			$row = $stmt->fetch();
+
+			if ($row && password_verify($password, $row['password'])) {
+				return new UserModel($row);
+			}
 		}
 		return null;
 

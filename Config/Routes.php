@@ -10,5 +10,7 @@ $router = new Router([
 	new Route('GET', '^/contact/?$', 'Silverado\Controllers\ContactController', 'contact'),
 	new Route('POST', '^/checkout/?$', 'Silverado\Controllers\CheckoutController', 'checkout'),
 	new Route('GET', '^/login/?$', 'Silverado\Controllers\LoginController', 'displayForm'),
-	new Route('POST', '^/login/?$', 'Silverado\Controllers\LoginController', 'validateLogin')
+	new Route('POST', '^/login/?$', 'Silverado\Controllers\LoginController', 'validateLogin'),
+	new Route('GET', '^/logout/?$', 'Silverado\Controllers\LoginController', 'logout')
+
 ]);

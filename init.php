@@ -8,7 +8,6 @@ if ($debug) {
 	ini_set('error_append_string', '</div>');
 	error_reporting(~0);
 }
-
 // Configure class autoloading based on the class namespace
 spl_autoload_register(function($className) {
 	$class = preg_replace("/^(.*)(Model|Controller|View)$/", "Silverado\\$2s\\$0", $className);
@@ -18,7 +17,16 @@ spl_autoload_register(function($className) {
 	}
 });
 
+session_start();
 define('SILVERADO_DIR', dirname(__FILE__));
+
+/*
+ * This library is included as the RMIT servers have an older version of php
+ *  that doens't support the php password_ functions.
+ *
+ * https://github.com/ircmaxell/password_compat
+ */
+include_once('lib/password.php');
 
 function getBaseUri()
 {
