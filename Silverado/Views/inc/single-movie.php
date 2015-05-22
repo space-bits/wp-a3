@@ -43,8 +43,8 @@
 						</div>
 					<?php } ?>
 
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/ . <?= $movie->trailer; ?>" frameborder="1px" allowfullscreen></iframe>
-					?>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Skpu5HaVkOc" frameborder="1px" allowfullscreen></iframe>
+
 
 					<!-- <video width="400" controls>
 					<source src="<?= $movie->trailer; ?>" type="video/mp4">

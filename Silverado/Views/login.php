@@ -4,12 +4,12 @@
 ?>
 
 	<main class="wrapper yellow-bg round-first">
-		<h2>Checkout</h2>
+		<h2>Login</h2>
 		<?php
 		//search db for existing user, if user exists set session with their details and assign booking to their account
 		//else, add new user and set booking to their account
 
-
+		include('static/validateVoucher.php');
 		include('inc/single-login.php');
 		?>
 	</main>

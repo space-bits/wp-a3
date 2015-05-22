@@ -9,7 +9,7 @@ insert into movie values(
 	'/static/img/movies/furious-7.jpg',
 	'Deckard Shaw seeks revenge against Dominic Toretto and his family for his comatose brother.',
 	'Dominic Torretto and his crew thought they left the criminal mercenary life behind. They defeated an international terrorist named Owen Shaw and went their seperate ways. But now, Shaw''s brother, Deckard Shaw is out killing the crew one by one for revenge. Worse, a Somalian terrorist called Jakarde, and a shady government official called "Mr. Nobody" are both competing to steal a computer terrorism program called God''s Eye, that can turn any technological device into a weapon. Torretto must reconvene with his team to stop Shaw and retrieve the God''s Eye program while caught in a power struggle between terrorist and the United States government.',
-	'watch?v=Skpu5HaVkOc',
+	'FUS_Q7FsfqU',
 	'March 26, 2015',
 	1
 );
@@ -24,7 +24,7 @@ insert into movie values(
 	'/static/img/movies/the-longest-ride.jpg',
 	'After an automobile crash, the lives of a young couple intertwine with a much older man, as he reflects back on a past love.',
 	'Based on the bestselling novel by master storyteller Nicholas Sparks, THE LONGEST RIDE centers on the star-crossed love affair between Luke, a former champion bull rider looking to make a comeback, and Sophia, a college student who is about to embark upon her dream job in New York City''s art world. As conflicting paths and ideals test their relationship, Sophia and Luke make an unexpected and fateful connection with Ira, whose memories of his own decades-long romance with his beloved wife deeply inspire the young couple. Spanning generations and two intertwining love stories, THE LONGEST RIDE explores the challenges and infinite rewards of enduring love. Written by 20th Century Fox',
-	'watch?v=FUS_Q7FsfqU',
+	'',
 	'April 10, 2015',
 	1
 );
