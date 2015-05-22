@@ -31,29 +31,14 @@ if(isset($_POST['code']) && !empty($_POST['code'])) {
                         );
 
   $voucher = str_split(strtoupper($_POST['code']));
+  $chkSum1 = $chkValidate[(($voucher[0] * $voucher[1] + $voucher[2]) * $voucher[3] + $voucher[4]) % 26];
+  $chkSum2 = $chkValidate[(($voucher[6] * $voucher[7] + $voucher[8]) * $voucher[9] + $voucher[10]) % 26];
 
-  $a = $voucher[0];
-  $b = $voucher[1];
-  $c = $voucher[2];
-  $d = $voucher[3];
-  $e = $voucher[4];
-  $chkLet1 = $voucher[12];
-
-  $chkSum1 = $chkValidate[(($a * $b + $c) * $d + $e) % 26];
-
-  $a = $voucher[6];
-  $b = $voucher[7];
-  $c = $voucher[8];
-  $d = $voucher[9];
-  $e = $voucher[10];
-  $chkLet2 = $voucher[13];
-
-  $chkSum2 = $chkValidate[(($a * $b + $c) * $d + $e) % 26];
-
-  if(($chkSum1 === $chkLet1) && ($chkSum2 === $chkLet2)) {
+  if(($chkSum1 === $voucher[12]) && ($chkSum2 === $voucher[13])) {
+    //pplaceholder output.
     echo '<p> SUCCESS! </p>';
-    echo $chkSum1 . ' == ' . $chkLet1 . ', ';
-    echo $chkSum2 . ' == ' . $chkLet2;
+    echo $chkSum1 . ' == ' . $voucher[12] . ', ';
+    echo $chkSum2 . ' == ' . $voucher[13];
   } else {
     echo '<p> Nooooooo! </p>';
   }
