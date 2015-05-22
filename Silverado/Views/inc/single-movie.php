@@ -43,11 +43,14 @@
 						</div>
 					<?php } ?>
 
-					<video width="400" controls>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/ . <?= $movie->trailer; ?>" frameborder="1px" allowfullscreen></iframe>
+					?>
+
+					<!-- <video width="400" controls>
 					<source src="<?= $movie->trailer; ?>" type="video/mp4">
 					<source src="mov_bbb.ogg" type="video/ogg">
 					Your browser does not support HTML5 video.
-					</video>
+					</video> -->
 				</div>
 			</div> <!-- .movie-info -->
 		</article>
