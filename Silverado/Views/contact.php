@@ -7,8 +7,8 @@
 	<main class="wrapper yellow-bg round-first">
 		<h2>Contact us!</h2>
 		<p>We are very excited to bring the best experience to you as we possibly can, but in the mean time, if you just can't wait to see the results of our renovations, send us an email and we'll do our best to answer you as soon as possible. Simply fill out the form below, and we'll get in touch!</p>
-		<div class="form-map-info"> <!-- Uncomment action to demo -->
-			<form method="POST" action=""<!-- static/mail.php --> class="contact-form">
+		<div class="form-map-info"> <!-- Uncomment action to demo add static/mail.php to action-->
+			<form method="POST" action="" class="contact-form">
 				<input type="text" id="name" class="form-field form-first-element round-first" name="name" placeholder="Name" required>
 				<input type="email" id="email" class="form-field form-middle-element" name="email" placeholder="your@email.com" required>
 				<input type="text" id="subject" class="form-field form-middle-element" name="subject" placeholder="Subject" list="subjects" required>
