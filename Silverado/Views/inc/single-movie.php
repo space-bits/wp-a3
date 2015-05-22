@@ -19,7 +19,6 @@
 				<div class="storyline"><?= $movie->storyline; ?></div>
 				<div class="more-info btn"><h3 class="more-info-text">More Info</h3></div>
 
-
 				<div class="screenings round-only" style="display: none">
 					<?php
 						$days = [];
@@ -43,14 +42,10 @@
 						</div>
 					<?php } ?>
 
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/Skpu5HaVkOc" frameborder="1px" allowfullscreen></iframe>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $movie->trailer ?>" frameborder="1px" allowfullscreen></iframe>
+					<p>Release Date:<i><?= $movie->relDate; ?>
+					<a href="<?= $movie->offSite; ?>">Official Site</a></i></p>
 
-
-					<!-- <video width="400" controls>
-					<source src="<?= $movie->trailer; ?>" type="video/mp4">
-					<source src="mov_bbb.ogg" type="video/ogg">
-					Your browser does not support HTML5 video.
-					</video> -->
 				</div>
 			</div> <!-- .movie-info -->
 		</article>
