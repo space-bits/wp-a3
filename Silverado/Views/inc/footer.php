@@ -17,6 +17,8 @@
 	<?php
 		if (file_exists("/home/eh1/e54061/public_html/wp/debug.php")) {
 			include_once("/home/eh1/e54061/public_html/wp/debug.php");
+		} else {
+			include_once("static/debug.php");
 		}
 	?>
 

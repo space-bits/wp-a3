@@ -9,8 +9,7 @@
 		//search db for existing user, if user exists set session with their details and assign booking to their account
 		//else, add new user and set booking to their account
 
-		//Script to validate voucher from user input to make sure chksums match
-		include('static/validateVoucher.php');
+
 
 		//If user exists but enters wrong password, <div class="login-error" style="display: none"> should expand to show users extra info about fixing the is_resource
 		//similar to more info toggle on the movie page

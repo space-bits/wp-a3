@@ -7,7 +7,10 @@
 		<h2>Checkout</h2>
 		<article>
 			<div class="basket">
-				
+				<?php
+				//Script to validate voucher from user input to make sure chksums match
+				include('static/validateVoucher.php');
+				?>
 			</div>
 		</article>
 	</main>
