@@ -8,19 +8,12 @@
 		<?php
 		//search db for existing user, if user exists set session with their details and assign booking to their account
 		//else, add new user and set booking to their account
-
-
-
 		//If user exists but enters wrong password, <div class="login-error" style="display: none"> should expand to show users extra info about fixing the is_resource
 		//similar to more info toggle on the movie page
 
 		include('inc/single-login.php');
 		include('inc/single-register.php');
 
-		if(isset($_POST) && isset($_SESSION)) {
-		//$_SESSION["user"] = $_POST["username"];
-			print_r($_SESSION["user"]);
-		}
 		?>
 		<div class="login-error" style="display: none">
 			<!-- NOTE: This functionality is merely placeholder at this time. -->
