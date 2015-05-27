@@ -35,9 +35,14 @@ if(isset($_POST['code']) && !empty($_POST['code'])) {
   $chkSum2 = $chkValidate[(($voucher[6] * $voucher[7] + $voucher[8]) * $voucher[9] + $voucher[10]) % 26];
 
   if(($chkSum1 === $voucher[12]) && ($chkSum2 === $voucher[13])) {
-    //placeholder output.
     //Set session to store the validation to calculate discounted price if true
-    
+    //Grab username from user table.
+    // if(isset($_SESSION["$userId"])) {
+    //   $_SESSION["$userId"]["voucher"] = "true";
+    // }
+    // $user = $user->id;
+    // $_SESSION["$user"]["voucher"] = "true";
+    print_r($_SESSION);
   }
 } else {
   echo '<p> No voucher submitted.</p>';

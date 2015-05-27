@@ -12,6 +12,8 @@
 		//similar to more info toggle on the movie page
 
 		include('inc/single-login.php');
+		include('inc/single-register.php');
+
 		?>
 		<div class="login-error" style="display: none">
 			<!-- NOTE: This functionality is merely placeholder at this time. -->
