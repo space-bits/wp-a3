@@ -327,6 +327,13 @@ section:last-child {
 
 }
 
+.login-form {
+	border-style: solid;
+	border-radius: 15px;
+	border: 5px;
+	margin: 5px;
+}
+
 /* ========== Aside Styles ========== */
 aside {
 	padding: 20px;
@@ -672,8 +679,11 @@ a.book-button {
 	}
 
 	.more-info {
-		padding-left: 1%;
 		margin: 5px 0 15px 0;
+	}
+
+	.more-info-text {
+		padding-left: 15px;
 	}
 
 	.screening {

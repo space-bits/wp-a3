@@ -1,8 +1,15 @@
 # README #
 
-Web Programming Assignment of [Andre Ribas](https://titan.csit.rmit.edu.au/~s3530481/wp/) and [Robert Laine-Wyllie](https://titan.csit.rmit.edu.au/~s3433096/wp/)
+Web Programming Assignment of
+[Andre Ribas]
+(https://titan.csit.rmit.edu.au/~s3530481/wp/)
+{}
+and
+[Robert Laine-Wyllie]
+(https://titan.csit.rmit.edu.au/~s3433096/wp/)
+{https://github.com/rmit-s3433096-RobLW}
 
-Instalation
+Installation
 =====
 
 Just run this inside the project directory:
