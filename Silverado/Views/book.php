@@ -119,7 +119,6 @@
 		<?php } // end foreach $sectors ?>
 		</div>
 
-
 	</main>
 
 	<script src="<?= getAssetUri('static/js/booking.js'); ?>"></script>
