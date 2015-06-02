@@ -77,7 +77,7 @@ INSERT INTO price VALUES (1, 'Discount', 12, 10, 8, 25, 20, 20, 20, 20, 1);
 INSERT INTO price VALUES (2, 'Full fare', 18, 15, 12, 30, 25, 30, 30, 30, 1);
 
 
-INSERT INTO user VALUES (1, 'admin', '$2y$10$0.Pgp5gBfFE.PvUY.qwsEear0McoPVcqX5Cy9HUWGQ6vgflhNWyKG', '', '', '', 'admin@email.com', 1);
+INSERT INTO user VALUES (1, 'admin', '$2y$10$0.Pgp5gBfFE.PvUY.qwsEear0McoPVcqX5Cy9HUWGQ6vgflhNWyKG', 'Admin', 'Test', '5555555555', 'admin@email.com', 1);
 
 
 INSERT INTO room VALUES (1, 'Main room', 1);
