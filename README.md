@@ -22,4 +22,4 @@ Copy the .htaccess-sample and edit it to suit your needs. The sample works with 
     /project/path $ cp .htaccess-sample .htaccess
 
 
-###Note: For completion by the 5th of June 2015, all that is required is to have $_SESSION functionality for bookings working.###
+###Note: For completion by the 5th of June 2015, all that is required is to have $_SESSION['cart'] functionality for bookings working.###
