@@ -2,7 +2,7 @@
 	// Header: Do not remove.
 	include_once('inc/header.php');
 	if(isset($_POST['username']) && isset($_POST['password']) && !empty($_POST)) {
-		$_SESSION['user']['username'] = $_POST['username'];
+		$_SESSION['user']->username = $_POST['username'];
 	}
 
 ?>
@@ -14,16 +14,16 @@
 				<?php
 						if((isset($_POST['regPass']) && isset($_POST['confPass'])) && (($_POST['confPass'] === $_POST['regPass']))) {
 							if(isset($_POST['email'])) {
-								$_SESSION['user']['email'] = $_POST['email'];
+								$_SESSION['user']->email = $_POST['email'];
 							}
 							if(isset($_POST['phone'])) {
-								$_SESSION['user']['phone'] = $_POST['phone'];
+								$_SESSION['user']->phone = $_POST['phone'];
 							}
 							if(isset($_POST['firstname'])) {
-								$_SESSION['user']['firstname'] = $_POST['firstname'];
+								$_SESSION['user']->firstname = $_POST['firstname'];
 							}
 							if(isset($_POST['lastname'])) {
-								$_SESSION['user']['lastname'] = $_POST['lastname'];
+								$_SESSION['user']->lastname = $_POST['lastname'];
 							} else {
 								echo '<p> Failed to register. Passwords do not match.</p>';
 								echo '<form method="POST" action="<?= getBaseUri(); ?>login" class="login-form">';
