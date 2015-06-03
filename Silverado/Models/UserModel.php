@@ -9,6 +9,7 @@ class UserModel extends AbstractModel {
 	protected $lastname;
 	protected $phone;
 	protected $email;
+	protected $voucher;
 
 
 
