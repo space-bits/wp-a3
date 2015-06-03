@@ -11,28 +11,6 @@
 		<h2>Checkout</h2>
 		<article>
 			<div class="basket">
-				<?php
-						if((isset($_POST['regPass']) && isset($_POST['confPass'])) && (($_POST['confPass'] === $_POST['regPass']))) {
-							if(isset($_POST['email'])) {
-								$_SESSION['user']->email = $_POST['email'];
-							}
-							if(isset($_POST['phone'])) {
-								$_SESSION['user']->phone = $_POST['phone'];
-							}
-							if(isset($_POST['firstname'])) {
-								$_SESSION['user']->firstname = $_POST['firstname'];
-							}
-							if(isset($_POST['lastname'])) {
-								$_SESSION['user']->lastname = $_POST['lastname'];
-							} else {
-								echo '<p> Failed to register. Passwords do not match.</p>';
-								echo '<form method="POST" action="<?= getBaseUri(); ?>login" class="login-form">';
-								echo '<input class="login" type="submit" value="Return">';
-								echo '</form>';
-							}
-						} ?>
-
-
 
 				<?php if($_SESSION['user']->voucher == 'true') {
 					echo '<p>Voucher is valid. 20% discount applied! NOTE: Still needs implementation.</br>Either echo out hardcoded values, or use function to recalculate prices.</p>';

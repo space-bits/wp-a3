@@ -4,7 +4,7 @@
 ?>
 
 	<main class="wrapper yellow-bg round-first">
-		<h2>Register</h2>
+		<h2>Register here</h2>
 		<form method="POST" action="<?= getBaseUri(); ?>register">
 			<input type="text" name="username" placeholder="Username" required>
 			<input type="text" name="firstname" placeholder="First Name" required>

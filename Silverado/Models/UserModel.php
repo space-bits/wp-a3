@@ -11,11 +11,6 @@ class UserModel extends AbstractModel {
 	protected $email;
 	protected $voucher;
 
-
-
-	// TODO: URGENT! Add cryptography on the password.
-	// TODO: URGENT! Add sql real escape string to all input fields
-
 	public static function validateLogin($username, $password)
 	{
 
