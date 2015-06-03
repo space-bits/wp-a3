@@ -15,10 +15,10 @@
 		include('inc/single-register.php');
 
 		?>
-		<div class="login-error" style="display: none">
-			<!-- NOTE: This functionality is merely placeholder at this time. -->
+		<!-- NOTE: This functionality is merely placeholder at this time.  -->
+		<!-- <div class="login-error" style="display: none">
 			<p>Oh no! It seems you've entered the wrong password. If this is your account, this issue can be resolved by <a href="#">reseting your password</a>. </p>
-		</div>
+		</div> -->
 	</main>
 
 	<script src="<?= getAssetUri('static/js/errorToggle.js'); ?>"></script>

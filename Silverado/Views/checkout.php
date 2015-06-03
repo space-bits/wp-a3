@@ -3,7 +3,7 @@
 	include_once('inc/header.php');
 
 	if(isset($_POST['username']) && isset($_POST['password']) && !empty($_POST)) {
-		$_SESSION['user']->username = $_POST['username'];
+		$_SESSION['user']['username'] = $_POST['username'];
 	}
 
 ?>
@@ -13,7 +13,7 @@
 		<article>
 			<div class="basket">
 				<?php
-						if(isset($_POST['regPass']) && isset($_POST['confPass']) && ($_POST['confPass'] === $_POST['regPass'])) {
+						if((isset($_POST['regPass']) && isset($_POST['confPass'])) && (($_POST['confPass'] === $_POST['regPass']))) {
 							if(isset($_POST['email'])) {
 								$_SESSION['user']['email'] = $_POST['email'];
 							}
@@ -31,16 +31,20 @@
 								echo '<input class="login" type="submit" value="Return">';
 								echo '</form>';
 							}
-						}
-				?>
-				<span class="voucher">
-					<form method="POST" action="/checkout" class="voucher-form">
-						<h3>Enter your voucher here!</h3>
-						<input name="code" id="voucher" value="" placeholder="12345-67890-TK" type="text" pattern="(\d){5}-(\d){5}-[a-zA-Z]{2}"></input>
-						<input name="submit" id="button" value="Use voucher!" type="submit"></input>
-					</form>
-				</span>
-				<?php
+						} ?>
+
+						
+
+				<?php if($_SESSION['user']['voucher'] === 'true') {
+					} else { ?>
+					<span class="voucher">
+						<form method="POST" action="<?= getBaseUri(); ?>checkout" class="voucher-form">
+							<h3>Enter your voucher here!</h3>
+							<input name="code" id="voucher" value="" placeholder="12345-67890-TK" type="text" pattern="(\d){5}-(\d){5}-[a-zA-Z]{2}"></input>
+							<input name="submit" id="button" value="Use voucher!" type="submit"></input>
+						</form>
+					</span>
+				<?php }
 
 				//Script to validate voucher from user input to make sure chksums match
 				include('static/validateVoucher.php');
