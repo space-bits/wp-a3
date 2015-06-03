@@ -5,7 +5,7 @@
     <input name="lastname" type="text" placeholder="Last Name" required>
     <input name="regPass" type="password" placeholder="Password" required>
     <input name="confPass" type="password" placeholder="Confirm Password" required>
-    <input name="phone" type="string" placeholder="Phone Number" pattern="(\(04\)|04|\+614)[ ]?\d{4}[ ]?\d{4}" required>
+    <input name="phone" type="string" placeholder="Phone Number" pattern="((\(04\)|04|\+614)[ ]?\d{4}[ ]?\d{4})|(()\+61|0)(2-3)|(7-8)[ ]?\d{4}[ ]?\d{4})" required>
     <input name="email" type="email" placeholder="Email Address" required>
     <input class="login" type="submit" value="Register">
 </form>
