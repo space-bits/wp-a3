@@ -1,5 +1,4 @@
 <?php
-//Not sure if this works or even if it's a good method of validation
 if(isset($_POST['code']) && !empty($_POST['code'])) {
   $chkValidate = array (
                         '0'=>'A',
@@ -39,7 +38,5 @@ if(isset($_POST['code']) && !empty($_POST['code'])) {
     $_SESSION['user']['voucher'] = 'true';
 
   }
-} else {
-  echo '<p> No voucher submitted.</p>';
 }
 ?>

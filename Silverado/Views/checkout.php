@@ -1,7 +1,6 @@
 <?php
 	// Header: Do not remove.
 	include_once('inc/header.php');
-
 	if(isset($_POST['username']) && isset($_POST['password']) && !empty($_POST)) {
 		$_SESSION['user']['username'] = $_POST['username'];
 	}
@@ -35,8 +34,8 @@
 
 
 
-				<?php if($_SESSION['user']['voucher'] === 'true') {
-					echo '<p>Voucher entered succesfully. 20% discount applied!</p>';
+				<?php if($_SESSION['user']['voucher'] == 'true') {
+					echo '<p>Voucher is valid. 20% discount applied! NOTE: Still needs implementation.</br>Either echo out hardcoded values, or use function to recalculate prices.</p>';
 					} else { ?>
 					<span class="voucher">
 						<form method="POST" action="<?= getBaseUri(); ?>checkout" class="voucher-form">
