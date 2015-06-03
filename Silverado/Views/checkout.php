@@ -33,9 +33,10 @@
 							}
 						} ?>
 
-						
+
 
 				<?php if($_SESSION['user']['voucher'] === 'true') {
+					echo '<p>Voucher entered succesfully. 20% discount applied!</p>';
 					} else { ?>
 					<span class="voucher">
 						<form method="POST" action="<?= getBaseUri(); ?>checkout" class="voucher-form">
