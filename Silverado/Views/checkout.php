@@ -34,7 +34,7 @@
 						}
 				?>
 				<span class="voucher">
-					<form method="POST" action="<?= getBaseUri(); ?>checkout" class="voucher-form">
+					<form method="POST" action="/checkout" class="voucher-form">
 						<h3>Enter your voucher here!</h3>
 						<input name="code" id="voucher" value="" placeholder="12345-67890-TK" type="text" pattern="(\d){5}-(\d){5}-[a-zA-Z]{2}"></input>
 						<input name="submit" id="button" value="Use voucher!" type="submit"></input>

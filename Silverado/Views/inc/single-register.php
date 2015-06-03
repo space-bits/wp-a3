@@ -1,4 +1,4 @@
-<form method="POST" action="<?= getBaseUri(); ?>login" class="login-form">
+<form method="POST" action="/login" class="login-form">
     <p>Register Here</p>
     <input name="username" type="text" placeholder="User Name" required>
     <input name="firstname" type="text" placeholder="First Name" required>
