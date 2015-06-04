@@ -1,8 +1,8 @@
 <?php
 	// Header: Do not remove.
 	include_once('inc/header.php');
-	if(isset($_POST['username']) && isset($_POST['password']) && !empty($_POST)) {
-		$_SESSION['user']->username = $_POST['username'];
+	if(!isset($_SESSION['user'])) {
+		// go to login
 	}
 
 ?>
@@ -25,8 +25,8 @@
 				<?php }
 
 				//Script to validate voucher from user input to make sure chksums match
-				include('static/validateVoucher.php');
-				include('static/addBookingToCart.php')
+				//include('static/validateVoucher.php');
+				//include('static/addBookingToCart.php');
 				?>
 			</div>
 		</article>

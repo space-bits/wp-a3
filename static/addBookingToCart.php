@@ -1,7 +1,7 @@
 <?php
+use Silverado\Models\BookingModel;
 
-  $booking = new Booking();
+$booking = new BookingModel();
 
-  $_SESSION['cart'][] = $booking;
-  //$_SESSION['user']['cart'][] = $booking;
-?>
+$_SESSION['booking'][] = $booking;
+//$_SESSION['user']['cart'][] = $booking;

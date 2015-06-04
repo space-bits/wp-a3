@@ -17,7 +17,7 @@ class CheckoutController extends AbstractController {
 	{
 
 		$booking = new BookingModel($httpRequest->vars);
-		$_SESSION['cart'] = $booking;
+		$_SESSION['cart'][] = $booking;
 
 		$this->renderView('checkout');
 

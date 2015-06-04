@@ -10,12 +10,6 @@ use Silverado\Utils\HttpRequest;
 class LoginController extends AbstractController
 {
 
-
-	protected $user;
-	protected $hash;
-
-
-
 	public function __construct(HttpRequest $httpRequest, array $args)
 	{
 
@@ -55,8 +49,7 @@ class LoginController extends AbstractController
 	public function logout(HttpRequest $httpRequest, array $args)
 	{
 
-		unset($_SESSION['user']);
-		unset($_SESSION['cart']);
+		session_destroy();
 		$this->renderView('index');
 
 
