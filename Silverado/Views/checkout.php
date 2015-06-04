@@ -12,7 +12,7 @@
 		<article>
 			<div class="basket">
 
-				<?php if(isset($_SESSION['user']) && ($_SESSION['user']->voucher == 'true')) {
+				<?php if($_SESSION['user']->voucher === 'true') {
 					echo '<p>Voucher is valid. 20% discount applied! NOTE: Still needs implementation.</br>Either echo out hardcoded values, or use function to recalculate prices.</p>';
 					} else { ?>
 					<span class="voucher">

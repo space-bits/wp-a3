@@ -10,6 +10,14 @@
 			<li>
 				<?= $booking->screening->movie->name; ?> - $<?php printf("%.2f", $booking->calculate()); ?>
 				(<a href="<?= getBaseUri(); ?>cart/<?= $id; ?>/delete">Delete</a>)
+				<ul>
+					<li>
+						<?= $booking->screening->day; ?>
+					</li>
+					<li>
+						<?= $booking->screening->time; ?>
+					</li>
+				</ul>
 			</li>
 		<?php } ?>
 		</ul>
