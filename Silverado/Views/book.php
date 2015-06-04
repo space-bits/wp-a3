@@ -25,49 +25,49 @@
 						<tr class="ticket-row">
 							<td>Adult</td>
 							<td><label class="price"><?php echo $this->screening->price->sa; ?></label></td>
-							<td><input class="quantity" type="number" name="SA" min="0" max="10" value="0" onchange="updateTotal()"></td>
+							<td><input class="quantity" type="number" name="sa" min="0" max="10" value="0" onchange="updateTotal()"></td>
 							<td><label class="subtotal">0</label></td>
 						</tr>
 						<tr class="ticket-row">
 							<td>Concession</td>
 							<td><label class="price"><?php echo $this->screening->price->sp; ?></label></td>
-							<td><input class="quantity" type="number" name="SP" min="0" max="10" value="0" onchange="updateTotal()"></td>
+							<td><input class="quantity" type="number" name="sp" min="0" max="10" value="0" onchange="updateTotal()"></td>
 							<td><label class="subtotal">0</label></td>
 						</tr>
 						<tr class="ticket-row">
 							<td>Child</td>
 							<td><label class="price"><?php echo $this->screening->price->sc; ?></label></td>
-							<td><input class="quantity" type="number" name="SC" min="0" max="10" value="0" onchange="updateTotal()"></td>
+							<td><input class="quantity" type="number" name="sc" min="0" max="10" value="0" onchange="updateTotal()"></td>
 							<td><label class="subtotal">0</label></td>
 						</tr>
 						<tr class="ticket-row">
 							<td>Premium Adult</td>
 							<td><label class="price"><?php echo $this->screening->price->fa; ?></label></td>
-							<td><input class="quantity" type="number" name="FA" min="0" max="10" value="0" onchange="updateTotal()"></td>
+							<td><input class="quantity" type="number" name="fa" min="0" max="10" value="0" onchange="updateTotal()"></td>
 							<td><label class="subtotal">0</label></td>
 						</tr>
 						<tr class="ticket-row">
 							<td>Premium Child</td>
 							<td><label class="price"><?php echo $this->screening->price->fc; ?></label></td>
-							<td><input class="quantity" type="number" name="FC" min="0" max="10" value="0" onchange="updateTotal()"></td>
+							<td><input class="quantity" type="number" name="fc" min="0" max="10" value="0" onchange="updateTotal()"></td>
 							<td><label class="subtotal">0</label></td>
 						</tr>
 						<tr class="ticket-row">
 							<td>Beanbag 1</td>
 							<td><label class="price"><?php echo $this->screening->price->b1; ?></label></td>
-							<td><input class="quantity" type="number" name="B1" min="0" max="10" value="0" onchange="updateTotal()"></td>
+							<td><input class="quantity" type="number" name="b1" min="0" max="10" value="0" onchange="updateTotal()"></td>
 							<td><label class="subtotal">0</label></td>
 						</tr>
 						<tr class="ticket-row">
 							<td>Beanbag 2</td>
 							<td><label class="price"><?php echo $this->screening->price->b2; ?></label></td>
-							<td><input class="quantity" type="number" name="B2" min="0" max="10" value="0" onchange="updateTotal()"></td>
+							<td><input class="quantity" type="number" name="b2" min="0" max="10" value="0" onchange="updateTotal()"></td>
 							<td><label class="subtotal">0</label></td>
 						</tr>
 						<tr class="ticket-row">
 							<td>Beanbag 3</td>
 							<td><label class="price"><?php echo $this->screening->price->b3; ?></label></td>
-							<td><input class="quantity" type="number" name="B3" min="0" max="10" value="0" onchange="updateTotal()"></td>
+							<td><input class="quantity" type="number" name="b3" min="0" max="10" value="0" onchange="updateTotal()"></td>
 							<td><label class="subtotal">0</label></td>
 						</tr>
 

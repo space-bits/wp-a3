@@ -78,33 +78,3 @@ INSERT INTO price VALUES (2, 'Full fare', 18, 15, 12, 30, 25, 30, 30, 30, 1);
 
 
 INSERT INTO user VALUES (1, 'admin', '$2y$10$0.Pgp5gBfFE.PvUY.qwsEear0McoPVcqX5Cy9HUWGQ6vgflhNWyKG', 'Admin', 'Test', '5555555555', 'admin@email.com', 1);
-
-
-INSERT INTO room VALUES (1, 'Main room', 1);
-
-
-INSERT INTO sector VALUES (1, 'Left', 1, 1);
-INSERT INTO sector VALUES (2, 'Middle', 1, 1);
-INSERT INTO sector VALUES (3, 'Right', 1, 1);
-INSERT INTO sector VALUES (4, 'Front', 1, 1);
-
-
-INSERT INTO seat VALUES (1, 'H', '1', 1, 1), (2, 'H', '2', 1, 1), (3, 'H', '3', 1, 1), (4, 'H', '4', 1, 1), (5, 'H', '5', 1, 1);
-INSERT INTO seat VALUES (6, 'G', '1', 1, 1), (7, 'G', '2', 1, 1), (8, 'G', '3', 1, 1), (9, 'G', '4', 1, 1), (10, 'G', '5', 1, 1);
-INSERT INTO seat VALUES (11, 'F', '1', 1, 1), (12, 'F', '2', 1, 1), (13, 'F', '3', 1, 1), (14, 'F', '4', 1, 1), (15, 'F', '5', 1, 1);
-INSERT INTO seat VALUES (16, 'E', '1', 1, 1), (17, 'E', '2', 1, 1), (18, 'E', '3', 1, 1), (19, 'E', '4', 1, 1), (20, 'E', '5', 1, 1);
-
-INSERT INTO seat VALUES (21, 'H', '6', 2, 1), (22, 'H', '7', 2, 1), (23, 'H', '8', 2, 1), (24, 'H', '9', 2, 1);
-INSERT INTO seat VALUES (25, 'G', '6', 2, 1), (26, 'G', '7', 2, 1), (27, 'G', '8', 2, 1), (28, 'G', '9', 2, 1);
-INSERT INTO seat VALUES (29, 'F', '6', 2, 1), (30, 'F', '7', 2, 1), (31, 'F', '8', 2, 1), (32, 'F', '9', 2, 1);
-INSERT INTO seat VALUES (33, 'E', '6', 2, 1), (34, 'E', '7', 2, 1), (35, 'E', '8', 2, 1), (36, 'E', '9', 2, 1);
-
-INSERT INTO seat VALUES (37, 'H', '10', 3, 1), (38, 'H', '11', 3, 1), (39, 'H', '12', 3, 1), (40, 'H', '13', 3, 1), (41, 'H', '14', 3, 1);
-INSERT INTO seat VALUES (42, 'G', '10', 3, 1), (43, 'G', '11', 3, 1), (44, 'G', '12', 3, 1), (45, 'G', '13', 3, 1), (46, 'G', '14', 3, 1);
-INSERT INTO seat VALUES (47, 'F', '10', 3, 1), (48, 'F', '11', 3, 1), (49, 'F', '12', 3, 1), (50, 'F', '13', 3, 1), (51, 'F', '14', 3, 1);
-INSERT INTO seat VALUES (52, 'E', '10', 3, 1), (53, 'E', '11', 3, 1), (54, 'E', '12', 3, 1), (55, 'E', '13', 3, 1), (56, 'E', '14', 3, 1);
-
-INSERT INTO seat VALUES (57, 'D', '01', 4, 1), (58, 'D', '02', 4, 1), (59, 'D', '03', 4, 1), (60, 'D', '04', 4, 1);
-INSERT INTO seat VALUES (61, 'C', '01', 4, 1), (62, 'C', '02', 4, 1), (63, 'C', '03', 4, 1), (64, 'C', '04', 4, 1);
-INSERT INTO seat VALUES (65, 'B', '01', 4, 1), (66, 'B', '02', 4, 1), (67, 'B', '03', 4, 1);
-INSERT INTO seat VALUES (68, 'A', '01', 4, 1), (69, 'A', '02', 4, 1);
