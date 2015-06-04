@@ -56,6 +56,7 @@ class LoginController extends AbstractController
 	{
 
 		unset($_SESSION['user']);
+		unset($_SESSION['cart']);
 		$this->renderView('index');
 
 
