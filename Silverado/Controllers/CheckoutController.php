@@ -15,6 +15,8 @@ class CheckoutController extends AbstractController {
 	public function checkout(HttpRequest $httpRequest, array $args)
 	{
 
+		$_SESSION['vars'] = $httpRequest->vars;
+
 		$this->renderView('checkout');
 
 	}
