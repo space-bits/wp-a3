@@ -100,6 +100,9 @@
 						<td><input id="total" type="text" name="price" value="$ 0.00" readonly></td>
 					</tr>
 					<tr>
+						<td>Voucher</td>
+						<td> <input name="code" id="voucher" value="" placeholder="12345-67890-TK" type="text" pattern="(\d){5}-(\d){5}-[a-zA-Z]{2}"></input> </td>
+					<tr>
 						<td colspan=2><input type="submit" name="" value="Book"></td>
 					</tr>
 				</table>
@@ -107,18 +110,6 @@
 		</form>
 		<?php } /* end else */ ?>
 
-
-		<div class="room room-<?= $this->screening->room->name; ?>">
-		<?php foreach ($this->screening->room->sectors as $sector) { ?>
-			<div class="sector sector-<?= $sector->name; ?>">
-			<?php foreach ($sector->seats as $seat) { ?>
-				<div class="seat row-<?= $seat->row; ?> seat-<?= $seat->row . $seat->column; ?> status-<?= $seat->getStatus(); ?>">
-					<?= $seat->row . $seat->column; ?>
-				</div>
-			<?php } // end foreach $seats ?>
-			</div>
-		<?php } // end foreach $sectors ?>
-		</div>
 
 	</main>
 

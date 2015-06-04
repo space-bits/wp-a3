@@ -34,4 +34,12 @@ class CartController extends AbstractController
 
 	}
 
+
+	public function deleteBooking(HttpRequest $httpRequest, array $args)
+	{
+
+		unset($_SESSION['cart'][$args[1]]);
+		$this->renderView('cart');
+
+	}
 }

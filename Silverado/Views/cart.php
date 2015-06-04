@@ -8,9 +8,8 @@
 		<ul>
 		<?php foreach ($_SESSION['cart'] as $id => $booking) { ?>
 			<li>
-				<a href="<?= getBaseUri(); ?>cart/<?= $id; ?>">
-					<?= $booking->screening->movie->name; ?> ($ <?= $booking->calculate(); ?>.00)
-				</a>
+				<?= $booking->screening->movie->name; ?> - $<?php printf("%.2f", $booking->calculate()); ?>
+				(<a href="<?= getBaseUri(); ?>cart/<?= $id; ?>/delete">Delete</a>)
 			</li>
 		<?php } ?>
 		</ul>
