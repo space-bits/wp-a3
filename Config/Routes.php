@@ -15,6 +15,7 @@ $router = new Router([
 	new Route('GET', '^/register/?$', 'Silverado\Controllers\RegisterController', 'displayForm'),
 	new Route('POST', '^/register/?$', 'Silverado\Controllers\RegisterController', 'validateRegistration'),
 	new Route('GET', '^/cart/?$', 'Silverado\Controllers\CartController', 'displayCart'),
-	new Route('GET', '^/cart/(\d+)/delete?$', 'Silverado\Controllers\CartController', 'deleteBooking')
+	new Route('GET', '^/cart/(\d+)/delete?$', 'Silverado\Controllers\CartController', 'deleteBooking'),
+	new Route('GET', '^/ticket/$', 'Silverado\Controllers\TicketController', 'displayTicket')
 
 ]);

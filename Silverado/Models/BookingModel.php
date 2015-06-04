@@ -45,7 +45,6 @@ class BookingModel extends AbstractModel {
 	public function validateVoucher($code)
 	{
 
-
 		$chkValidate = array (
 			'0'=>'A',
 			'1'=>'B',
@@ -75,7 +74,6 @@ class BookingModel extends AbstractModel {
 			'25'=>'Z'
 		);
 
-
 		if (strlen($code) == 14) {
 			$voucher = str_split(strtoupper(trim($code)));
 
@@ -87,7 +85,12 @@ class BookingModel extends AbstractModel {
 		} else {
 			return 'false';
 		}
-
 	}
+
+	// public function createBarcode()
+	// {
+	//
+	// 	$barcode
+	// }
 
 }

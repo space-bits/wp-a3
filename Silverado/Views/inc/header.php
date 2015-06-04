@@ -29,8 +29,8 @@
 			<ul class="header-light-shadow">
 				<li><a href="<?= getBaseUri(); ?>">Home</a></li>
 				<li><a href="<?= getBaseUri(); ?>movie">Movies</a></li>
-				<li><a href="<?= getBaseUri(); ?>contact">Contact</a></li>
 				<li><a href="<?= getBaseUri(); ?>cart">Cart</a></li>
+				<li><a href="<?= getBaseUri(); ?>contact">Contact</a></li>
 			</ul>
 		</nav>
 	</header>

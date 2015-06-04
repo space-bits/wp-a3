@@ -21,18 +21,23 @@ class CartController extends AbstractController
 	public function displayCart(HttpRequest $httpRequest, array $args)
 	{
 
-		$this->renderView('cart');
+		if(isset($_SESSION['cart']) && !empty($_SESSION['cart']))
+		{
+			$this->renderView('cart');
+		} else {
+			$this->renderView('emptyCart');
+		}
 
 	}
 
-
-	public function editCart(HttpRequest $httpRequest, array $args)
-	{
-
-		$args[1]; // bookingId
-		$this->renderView('editCart');
-
-	}
+	//Not implemented yet.
+	// public function editCart(HttpRequest $httpRequest, array $args)
+	// {
+	//
+	// 	$args[1]; // bookingId
+	// 	$this->renderView('editCart');
+	//
+	// }
 
 
 	public function deleteBooking(HttpRequest $httpRequest, array $args)

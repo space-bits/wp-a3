@@ -21,6 +21,7 @@
 			</li>
 		<?php } ?>
 		</ul>
+		<a href="<?= getBaseUri(); ?>ticket/">View Ticket</a>
 	</main>
 
 	<script src="<?= getAssetUri('static/js/errorToggle.js'); ?>"></script>

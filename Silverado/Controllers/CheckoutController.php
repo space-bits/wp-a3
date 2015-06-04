@@ -17,9 +17,9 @@ class CheckoutController extends AbstractController {
 	{
 
 
-		echo '<pre class="yellow-bg">';
-		print_r($httpRequest->vars['code']);
-		echo '</pre>';
+		// echo '<pre class="yellow-bg">';
+		// print_r($httpRequest->vars['code']);
+		// echo '</pre>';
 
 		$booking = new BookingModel($httpRequest->vars);
 
