@@ -24,23 +24,32 @@ class BookingModel extends AbstractModel {
 
 	public function calculate()
 	{
+		// seat types
+		$sts = ['sa', 'sp', 'sc', 'fa', 'fc', 'b1', 'b2', 'b3'];
+		$totals = [];
 
-		$total = $this->sa * $this->screening->price->sa;
-		$total += $this->sp * $this->screening->price->sp;
-		$total += $this->sc * $this->screening->price->sc;
-		$total += $this->fa * $this->screening->price->fa;
-		$total += $this->fc * $this->screening->price->fc;
-		$total += $this->b1 * $this->screening->price->b1;
-		$total += $this->b2 * $this->screening->price->b2;
-		$total += $this->b3 * $this->screening->price->b3;
+		$total = 0.0;
+		foreach ($sts as $st) {
+			$totals[$st] = $this->$st * $this->screening->price->$st;
+			$total += $totals[$st];
+		}
+		$totals['total'] = $total;
 
 		if ($this->hasVoucher == 'true') {
-			return 0.8 * $total;
-		} else {
-			return $total;
+			foreach ($totals as $id => $value) {
+				$totals[$id] = $value * 0.8;
+			}
 		}
+
+		return $totals;
 	}
 
+	public function getTotals()
+	{
+
+		return $this->calculate();
+
+	}
 
 	public function validateVoucher($code)
 	{
