@@ -13,7 +13,7 @@ class CheckoutController extends AbstractController {
 
 	}
 
-	public function checkout(HttpRequest $httpRequest, array $args)
+	public function place(HttpRequest $httpRequest, array $args)
 	{
 
 
@@ -31,4 +31,14 @@ class CheckoutController extends AbstractController {
 
 	}
 
+
+	public function checkout(HttpRequest $httpRequest, array $args)
+	{
+
+		foreach ($_SESSION['cart'] as $id => $booking) {
+			$booking->save();
+			unset($_SESSION['cart'][$id]);
+		}
+		$this->renderView('emptyCart');
+	}
 }

@@ -10,7 +10,7 @@
 				echo '<p>Sorry but we couldn\'t find your request.</p>';
 			} else {
 		?>
-		<form method="POST" action="<?= getBaseUri();?>checkout" class="booking-form">
+		<form method="POST" action="<?= getBaseUri();?>place" class="booking-form">
 			<input type="hidden" name="screeningId" value="<?= $this->screening->id; ?>">
 			<div class="booking-half-wrapper">
 				<table class="booking-table round-table">

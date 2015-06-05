@@ -8,7 +8,7 @@ $router = new Router([
 	new Route('GET', '^/movie/?$', 'Silverado\Controllers\MovieController', 'movie'),
 	new Route('GET', '^/book/(\d+)/?$', 'Silverado\Controllers\BookController', 'book'),
 	new Route('GET', '^/contact/?$', 'Silverado\Controllers\ContactController', 'contact'),
-	new Route('POST', '^/checkout/?$', 'Silverado\Controllers\CheckoutController', 'checkout'),
+	new Route('POST', '^/place/?$', 'Silverado\Controllers\CheckoutController', 'place'),
 	new Route('GET', '^/login/?$', 'Silverado\Controllers\LoginController', 'displayForm'),
 	new Route('POST', '^/login/?$', 'Silverado\Controllers\LoginController', 'validateLogin'),
 	new Route('GET', '^/logout/?$', 'Silverado\Controllers\LoginController', 'logout'),
@@ -16,6 +16,7 @@ $router = new Router([
 	new Route('POST', '^/register/?$', 'Silverado\Controllers\RegisterController', 'validateRegistration'),
 	new Route('GET', '^/cart/?$', 'Silverado\Controllers\CartController', 'displayCart'),
 	new Route('GET', '^/cart/(\d+)/delete?$', 'Silverado\Controllers\CartController', 'deleteBooking'),
-	new Route('GET', '^/ticket/$', 'Silverado\Controllers\TicketController', 'displayTicket')
+	new Route('GET', '^/ticket/$', 'Silverado\Controllers\TicketController', 'displayTicket'),
+	new Route('GET', '^/checkout/$', 'Silverado\Controllers\CheckoutController', 'checkout')
 
 ]);
