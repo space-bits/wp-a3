@@ -18,7 +18,8 @@ include_once('inc/header.php');
 	 	printf("Total $%.2f", $booking->totals['total']);
 	}
 ?>
-
+<br>
+<a href="<?= getBaseUri(); ?>cart">Return to Cart</a>
 </main>
 
 <script src="<?= getAssetUri('static/js/errorToggle.js'); ?>"></script>
