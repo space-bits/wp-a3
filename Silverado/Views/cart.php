@@ -8,7 +8,7 @@
 		<ul>
 		<?php foreach ($_SESSION['cart'] as $id => $booking) { ?>
 			<li>
-				<?= $booking->screening->movie->name; ?> - $<?php printf("%.2f", $booking->calculate()); ?>
+				<?= $booking->screening->movie->name; ?> - $<?php printf("%.2f", $booking->totals['total']); ?>
 				(<a href="<?= getBaseUri(); ?>cart/<?= $id; ?>/delete">Delete</a>)
 				<ul>
 					<li>
