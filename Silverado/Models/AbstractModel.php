@@ -34,6 +34,11 @@ abstract class AbstractModel {
 				}
 			}
 			return $this->$name;
+		} else {
+			$methodName = 'get' . ucfirst($name);
+			if (method_exists($this, $methodName)) {
+				return $this->$methodName();
+			}
 		}
 
 		return null;
